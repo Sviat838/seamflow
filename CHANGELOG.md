@@ -29,6 +29,14 @@ Supabase project: **seamflow** (`buuyvmasbomxzyrwfkxo`, eu-west-1). Use the Supa
 
 ## 2026-10-24
 
+### Backend session: full app shipped (first deploy)
+
+- Built all pages on the phase 2 backend: landing (hero upload, live feed, use cases, certificates, policy rulings, plans), `/policy`, `/feed`, workspace (`/classify`, `/cases`, `/cases/[caseNumber]` result page with rating, appeal, audit trail, certificate card, `/certificates`, `/audit`, `/settings`), `/v/[code]` verify page, `/labels/[caseNumber]` print sheet, `/sign-in`, `/onboarding`, `/companies`, `/companies/[slug]`, `/contact`. Onboarding now follows one account = one company.
+- `Migration:` `20261024113824_one_account_one_company` applied (dropped `companies.email_domain`; `profiles.company_id` unique). Types updated.
+- Checks: `tsc`, `eslint`, 838 tests, `next build` green. Real E2E locally and on production: upload → verdict with clause and rating → case page → certificate → verify page → PDF → audit CSV (hash chain in order) → feed highlight → usage counter. Test rows removed afterwards.
+- Deployed: public repo https://github.com/Sviat838/seamflow (`main`), Vercel project `seamflow` (functions in `dub1`), live at https://seamflowtest.sviat.info. Vercel env vars set (secrets as sensitive).
+- Known gaps: the planned multi-agent review/fix pass was skipped to meet the deadline; unknown `/v/{code}` renders the not-found UI with HTTP 200 (streamed); landing sample images not added; the repo isn't linked to Vercel for auto-deploys (deploys go through the Vercel API).
+
 ### Backend session: company sign-up corrected (one account = one company)
 
 - `Contract:` per the user (relayed by the design session): **one account = one company**. Onboarding always creates a new company owned by the signing-in account. Removed from the design: work-email-domain matching, auto-join, membership, invites and admin roles. Company names stay unique (case-insensitive); a taken name gets "This company name is already registered. Please choose another." `docs/APP.md` updated. Supersedes the "Company matching" decision in the phase 2 entry below.
