@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HDX Certificate</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0B1F3A}a:hover{color:#1D3A66}
+</style>
+</helmet>
+<div style="width: 794px; height: 1123px; overflow: hidden; box-sizing: border-box; padding: 40px; background: #FFFFFF; font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.5; color: #3F4A5A">
+  <div style="height: 1043px; box-sizing: border-box; padding: 4px; border: 1px solid #0B1F3A; border-radius: 2px">
+    <div style="height: 1033px; box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid #D9DEE5; overflow: hidden">
+
+      <header style="flex: 0 0 68px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 26px; background: #0B1F3A">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <svg width="36" height="36" viewBox="0 0 32 32" aria-hidden="true"><rect x="0.5" y="0.5" width="31" height="31" rx="6" fill="#0B1F3A" stroke="#3A5175" stroke-width="1"></rect><rect x="4" y="10" width="24" height="8" rx="4" fill="#F2B705"></rect><path d="M6 16H26V18.5C26 21.5 23.5 24 20.5 24H11.5C8.5 24 6 21.5 6 18.5Z" fill="#FFFFFF"></path></svg>
+          <span style="font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: 0.04em; color: #FFFFFF">HDX</span>
+          <span aria-hidden="true" style="display: inline-block; width: 1px; height: 32px; background: #3A5175"></span>
+          <span style="display: flex; flex-direction: column; line-height: 1.25">
+            <span style="font-size: 13px; font-weight: 700; color: #FFFFFF">Hot Dog or Not</span>
+            <span style="font-size: 13px; color: #B8C2D1">Enterprise Cloud</span>
+          </span>
+        </div>
+        <div style="text-align: right; line-height: 1.35">
+          <p style="margin: 0; font-size: 13px; color: #B8C2D1">Certificate No. <span style="font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 700; color: #FFFFFF">{{certNo}}</span></p>
+          <p style="margin: 2px 0 0; font-size: 13px; color: #D5DCE6">Issued Oct 24, 2026 · EU-Central, Frankfurt</p>
+        </div>
+      </header>
+
+      <main style="flex: 0 0 auto; padding: 24px 26px 0">
+        <div style="text-align: center">
+          <p style="margin: 0; font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: #5B6676">HDX Classification Authority</p>
+          <h1 style="margin: 4px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 34px; line-height: 38px; color: #0B1F3A">Certificate of Classification</h1>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 22px; color: #3F4A5A">Issued to <strong style="font-weight: 700; color: #0B1F3A">Ballpark Holdings</strong> for <strong style="font-weight: 700; color: #0B1F3A">{{subject}}</strong> · {{subjectRef}}</p>
+        </div>
+
+        <div aria-live="polite" style="margin-top: 18px">
+          <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+            <section aria-labelledby="cert-verdict-hot" style="height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 24px; border-radius: 6px; background: #F2B705; color: #0B1F3A">
+              <div style="flex: 0 0 104px; line-height: 1.3">
+                <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0B1F3A">Verdict</p>
+                <p style="margin: 2px 0 0; font-size: 13px; font-weight: 600; white-space: nowrap; color: #0B1F3A">Policy v3.2, §2.1</p>
+              </div>
+              <h2 id="cert-verdict-hot" style="flex: 1 1 auto; min-width: 0; margin: 0; text-align: center; white-space: nowrap; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 50px; line-height: 1; letter-spacing: 0.01em; color: #0B1F3A">HOT DOG</h2>
+              <div style="flex: 0 0 104px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.3; text-align: right">
+                <span style="display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 6px; border: 2px solid #0B1F3A; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0B1F3A"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Final</span>
+                <span style="font-size: 13px; white-space: nowrap; color: #0B1F3A">Subject to appeal</span>
+              </div>
+            </section>
+          </sc-if>
+          <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+            <section aria-labelledby="cert-verdict-not" style="height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 24px; border-radius: 6px; background: #0B1F3A; color: #FFFFFF">
+              <div style="flex: 0 0 104px; line-height: 1.3">
+                <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B8C2D1">Verdict</p>
+                <p style="margin: 2px 0 0; font-size: 13px; font-weight: 600; white-space: nowrap; color: #FFFFFF">Policy v3.2, §3.5</p>
+              </div>
+              <h2 id="cert-verdict-not" style="flex: 1 1 auto; min-width: 0; margin: 0; text-align: center; white-space: nowrap; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 50px; line-height: 1; letter-spacing: 0.01em; color: #FFFFFF">NOT HOT DOG</h2>
+              <div style="flex: 0 0 104px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.3; text-align: right">
+                <span style="display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 6px; border: 2px solid #FFFFFF; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Final</span>
+                <span style="font-size: 13px; white-space: nowrap; color: #D5DCE6">Subject to appeal</span>
+              </div>
+            </section>
+          </sc-if>
+        </div>
+
+        <div style="display: flex; align-items: stretch; gap: 24px; margin-top: 24px">
+          <section aria-labelledby="cert-record-title" style="flex: 1 1 auto; min-width: 0; border: 1px solid #D9DEE5; border-radius: 6px; overflow: hidden">
+            <h2 id="cert-record-title" style="margin: 0; padding: 8px 12px; font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6676">Classification record</h2>
+            <dl style="margin: 0">
+              <sc-for list="{{detailRows}}" as="row" hint-placeholder-count="7">
+                <div style="display: flex; gap: 12px; padding: 6px 12px; border-top: 1px solid #D9DEE5; background: {{row.bg}}">
+                  <dt style="flex: 0 0 120px; font-size: 13px; font-weight: 600; line-height: 20px; color: #5B6676">{{row.label}}</dt>
+                  <dd style="flex: 1 1 auto; min-width: 0; margin: 0; font-family: {{row.font}}; font-size: {{row.size}}; line-height: 20px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; color: #0B1F3A">{{row.value}}</dd>
+                </div>
+              </sc-for>
+            </dl>
+          </section>
+
+          <section aria-labelledby="cert-verify-title" style="flex: 0 0 236px; padding: 14px; border: 1px solid #D9DEE5; border-radius: 6px; text-align: center">
+            <h2 id="cert-verify-title" style="margin: 0; font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6676">Verification</h2>
+            <div style="display: flex; justify-content: center; margin-top: 10px">
+              <svg viewBox="0 0 29 29" width="150" height="150" shape-rendering="crispEdges" role="img" aria-label="{{qrLabel}}"><rect x="0" y="0" width="29" height="29" fill="#FFFFFF"></rect><g fill="#0B1F3A"><rect x="2" y="2" width="7" height="1"></rect><rect x="12" y="2" width="3" height="1"></rect><rect x="16" y="2" width="2" height="1"></rect><rect x="20" y="2" width="7" height="1"></rect><rect x="2" y="3" width="1" height="1"></rect><rect x="8" y="3" width="1" height="1"></rect><rect x="11" y="3" width="2" height="1"></rect><rect x="15" y="3" width="1" height="1"></rect><rect x="18" y="3" width="1" height="1"></rect><rect x="20" y="3" width="1" height="1"></rect><rect x="26" y="3" width="1" height="1"></rect><rect x="2" y="4" width="1" height="1"></rect><rect x="4" y="4" width="3" height="1"></rect><rect x="8" y="4" width="1" height="1"></rect><rect x="10" y="4" width="1" height="1"></rect><rect x="14" y="4" width="1" height="1"></rect><rect x="16" y="4" width="2" height="1"></rect><rect x="20" y="4" width="1" height="1"></rect><rect x="22" y="4" width="3" height="1"></rect><rect x="26" y="4" width="1" height="1"></rect><rect x="2" y="5" width="1" height="1"></rect><rect x="4" y="5" width="3" height="1"></rect><rect x="8" y="5" width="1" height="1"></rect><rect x="11" y="5" width="1" height="1"></rect><rect x="17" y="5" width="2" height="1"></rect><rect x="20" y="5" width="1" height="1"></rect><rect x="22" y="5" width="3" height="1"></rect><rect x="26" y="5" width="1" height="1"></rect><rect x="2" y="6" width="1" height="1"></rect><rect x="4" y="6" width="3" height="1"></rect><rect x="8" y="6" width="1" height="1"></rect><rect x="13" y="6" width="1" height="1"></rect><rect x="18" y="6" width="1" height="1"></rect><rect x="20" y="6" width="1" height="1"></rect><rect x="22" y="6" width="3" height="1"></rect><rect x="26" y="6" width="1" height="1"></rect><rect x="2" y="7" width="1" height="1"></rect><rect x="8" y="7" width="1" height="1"></rect><rect x="10" y="7" width="5" height="1"></rect><rect x="18" y="7" width="1" height="1"></rect><rect x="20" y="7" width="1" height="1"></rect><rect x="26" y="7" width="1" height="1"></rect><rect x="2" y="8" width="7" height="1"></rect><rect x="10" y="8" width="1" height="1"></rect><rect x="12" y="8" width="1" height="1"></rect><rect x="14" y="8" width="1" height="1"></rect><rect x="16" y="8" width="1" height="1"></rect><rect x="18" y="8" width="1" height="1"></rect><rect x="20" y="8" width="7" height="1"></rect><rect x="11" y="9" width="1" height="1"></rect><rect x="13" y="9" width="1" height="1"></rect><rect x="15" y="9" width="1" height="1"></rect><rect x="17" y="9" width="2" height="1"></rect><rect x="4" y="10" width="1" height="1"></rect><rect x="6" y="10" width="1" height="1"></rect><rect x="8" y="10" width="4" height="1"></rect><rect x="13" y="10" width="2" height="1"></rect><rect x="16" y="10" width="2" height="1"></rect><rect x="19" y="10" width="1" height="1"></rect><rect x="23" y="10" width="2" height="1"></rect><rect x="4" y="11" width="3" height="1"></rect><rect x="10" y="11" width="5" height="1"></rect><rect x="16" y="11" width="8" height="1"></rect><rect x="3" y="12" width="2" height="1"></rect><rect x="8" y="12" width="1" height="1"></rect><rect x="10" y="12" width="1" height="1"></rect><rect x="14" y="12" width="1" height="1"></rect><rect x="16" y="12" width="1" height="1"></rect><rect x="18" y="12" width="1" height="1"></rect><rect x="21" y="12" width="1" height="1"></rect><rect x="26" y="12" width="1" height="1"></rect><rect x="3" y="13" width="1" height="1"></rect><rect x="7" y="13" width="1" height="1"></rect><rect x="14" y="13" width="3" height="1"></rect><rect x="18" y="13" width="2" height="1"></rect><rect x="24" y="13" width="1" height="1"></rect><rect x="4" y="14" width="1" height="1"></rect><rect x="8" y="14" width="2" height="1"></rect><rect x="11" y="14" width="3" height="1"></rect><rect x="18" y="14" width="4" height="1"></rect><rect x="23" y="14" width="2" height="1"></rect><rect x="2" y="15" width="1" height="1"></rect><rect x="6" y="15" width="1" height="1"></rect><rect x="10" y="15" width="2" height="1"></rect><rect x="17" y="15" width="1" height="1"></rect><rect x="19" y="15" width="2" height="1"></rect><rect x="24" y="15" width="1" height="1"></rect><rect x="3" y="16" width="3" height="1"></rect><rect x="8" y="16" width="1" height="1"></rect><rect x="10" y="16" width="1" height="1"></rect><rect x="12" y="16" width="1" height="1"></rect><rect x="15" y="16" width="2" height="1"></rect><rect x="19" y="16" width="1" height="1"></rect><rect x="21" y="16" width="1" height="1"></rect><rect x="23" y="16" width="3" height="1"></rect><rect x="4" y="17" width="1" height="1"></rect><rect x="6" y="17" width="2" height="1"></rect><rect x="10" y="17" width="1" height="1"></rect><rect x="12" y="17" width="1" height="1"></rect><rect x="14" y="17" width="2" height="1"></rect><rect x="22" y="17" width="1" height="1"></rect><rect x="24" y="17" width="3" height="1"></rect><rect x="2" y="18" width="1" height="1"></rect><rect x="6" y="18" width="1" height="1"></rect><rect x="8" y="18" width="2" height="1"></rect><rect x="12" y="18" width="1" height="1"></rect><rect x="15" y="18" width="2" height="1"></rect><rect x="18" y="18" width="5" height="1"></rect><rect x="24" y="18" width="3" height="1"></rect><rect x="10" y="19" width="1" height="1"></rect><rect x="15" y="19" width="2" height="1"></rect><rect x="18" y="19" width="1" height="1"></rect><rect x="22" y="19" width="3" height="1"></rect><rect x="26" y="19" width="1" height="1"></rect><rect x="2" y="20" width="7" height="1"></rect><rect x="10" y="20" width="1" height="1"></rect><rect x="14" y="20" width="1" height="1"></rect><rect x="16" y="20" width="3" height="1"></rect><rect x="20" y="20" width="1" height="1"></rect><rect x="22" y="20" width="2" height="1"></rect><rect x="25" y="20" width="2" height="1"></rect><rect x="2" y="21" width="1" height="1"></rect><rect x="8" y="21" width="1" height="1"></rect><rect x="10" y="21" width="1" height="1"></rect><rect x="14" y="21" width="1" height="1"></rect><rect x="17" y="21" width="2" height="1"></rect><rect x="22" y="21" width="3" height="1"></rect><rect x="26" y="21" width="1" height="1"></rect><rect x="2" y="22" width="1" height="1"></rect><rect x="4" y="22" width="3" height="1"></rect><rect x="8" y="22" width="1" height="1"></rect><rect x="11" y="22" width="13" height="1"></rect><rect x="26" y="22" width="1" height="1"></rect><rect x="2" y="23" width="1" height="1"></rect><rect x="4" y="23" width="3" height="1"></rect><rect x="8" y="23" width="1" height="1"></rect><rect x="10" y="23" width="1" height="1"></rect><rect x="13" y="23" width="5" height="1"></rect><rect x="22" y="23" width="1" height="1"></rect><rect x="25" y="23" width="2" height="1"></rect><rect x="2" y="24" width="1" height="1"></rect><rect x="4" y="24" width="3" height="1"></rect><rect x="8" y="24" width="1" height="1"></rect><rect x="10" y="24" width="2" height="1"></rect><rect x="13" y="24" width="3" height="1"></rect><rect x="19" y="24" width="2" height="1"></rect><rect x="22" y="24" width="1" height="1"></rect><rect x="25" y="24" width="1" height="1"></rect><rect x="2" y="25" width="1" height="1"></rect><rect x="8" y="25" width="1" height="1"></rect><rect x="10" y="25" width="4" height="1"></rect><rect x="16" y="25" width="2" height="1"></rect><rect x="19" y="25" width="1" height="1"></rect><rect x="23" y="25" width="1" height="1"></rect><rect x="26" y="25" width="1" height="1"></rect><rect x="2" y="26" width="7" height="1"></rect><rect x="12" y="26" width="3" height="1"></rect><rect x="18" y="26" width="2" height="1"></rect><rect x="22" y="26" width="2" height="1"></rect><rect x="25" y="26" width="1" height="1"></rect></g></svg>
+            </div>
+            <p style="margin: 10px 0 0; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: 0.06em; color: #0B1F3A">{{certCode}}</p>
+            <p style="margin: 0; font-size: 13px; font-weight: 600; line-height: 18px"><a href="#" style="color: #0B1F3A">hdx.example/v/{{certCode}}</a></p>
+            <p style="margin: 8px 0 0; font-size: 12px; line-height: 17px; color: #3F4A5A">Scan to verify authenticity. Certificates can be revoked after an appeal; the verify page always shows current status.</p>
+          </section>
+        </div>
+
+        <section aria-labelledby="cert-determination-title" style="margin-top: 22px">
+          <h2 id="cert-determination-title" style="margin: 0; font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6676">Determination</h2>
+          <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+            <p style="margin: 6px 0 0; font-size: 15px; line-height: 22px; color: #3F4A5A">Having examined the submitted image under Hot Dog Definition Policy v3.2, the HDX Classification Authority determines that it is <strong style="font-weight: 700; color: #0B1F3A">a hot dog</strong> in canonical form: a frankfurter seated lengthwise in a split bun (§2.1). The determination is binary and final, subject to appeal.</p>
+          </sc-if>
+          <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+            <p style="margin: 6px 0 0; font-size: 15px; line-height: 22px; color: #3F4A5A">Having examined the submitted image under Hot Dog Definition Policy v3.2, the HDX Classification Authority determines that it is <strong style="font-weight: 700; color: #0B1F3A">not a hot dog</strong>: a triangular flatbread with no split bun and no encased sausage (§3.5). The determination is binary and final, subject to appeal.</p>
+          </sc-if>
+        </section>
+
+        <div style="display: flex; align-items: flex-end; gap: 32px; margin-top: 24px">
+          <svg width="112" height="112" viewBox="0 0 112 112" role="img" aria-label="Seal of the HDX Classification Authority" style="display: block; flex: 0 0 auto">
+            <defs>
+              <path id="hdx-cert-seal-top" d="M17.5 56A38.5 38.5 0 0 1 94.5 56"></path>
+              <path id="hdx-cert-seal-bottom" d="M9 56A47 47 0 0 0 103 56"></path>
+            </defs>
+            <circle cx="56" cy="56" r="55" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="1.5"></circle>
+            <circle cx="56" cy="56" r="51.5" fill="#0B1F3A"></circle>
+            <circle cx="56" cy="56" r="49.5" fill="none" stroke="#F2B705" stroke-width="1"></circle>
+            <text fill="#FFFFFF" font-family="'Source Sans 3', Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5"><textPath href="#hdx-cert-seal-top" startOffset="50%" text-anchor="middle">HDX · CERTIFIED</textPath></text>
+            <text fill="#FFFFFF" font-family="'Source Sans 3', Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5"><textPath href="#hdx-cert-seal-bottom" startOffset="50%" text-anchor="middle">POLICY V3.2</textPath></text>
+            <circle cx="13" cy="56" r="2" fill="#F2B705"></circle>
+            <circle cx="99" cy="56" r="2" fill="#F2B705"></circle>
+            <circle cx="56" cy="56" r="34" fill="#F2B705"></circle>
+            <circle cx="56" cy="56" r="30.5" fill="none" stroke="#0B1F3A" stroke-width="1"></circle>
+            <text x="56" y="61" text-anchor="middle" fill="#0B1F3A" font-family="'Source Serif 4', Georgia, serif" font-size="22" font-weight="600" letter-spacing="1">HDX</text>
+            <path d="M44 66.5H68" fill="none" stroke="#0B1F3A" stroke-width="1"></path>
+            <text x="56" y="79" text-anchor="middle" fill="#0B1F3A" font-family="'Source Sans 3', Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1">2026</text>
+          </svg>
+
+          <div style="flex: 1 1 auto; min-width: 0">
+            <svg width="210" height="46" viewBox="0 0 210 46" aria-hidden="true" style="display: block"><path d="M8 33C12 20 18 9 24 11C30 13 23 33 18 35C13 37 26 17 34 15C40 14 36 29 41 29C45 29 47 17 53 17C58 17 55 29 60 29C65 29 68 15 74 15C79 15 76 29 81 29C88 29 93 11 99 13C104 15 97 31 103 31C109 31 113 19 119 19C124 19 122 29 127 29C133 29 137 21 143 21C148 21 147 28 152 28C159 28 165 23 171 21" fill="none" stroke="#0B1F3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M36 40C86 36 146 37 202 32" fill="none" stroke="#0B1F3A" stroke-width="1.2" stroke-linecap="round"></path></svg>
+            <div style="padding-top: 6px; border-top: 1px solid #0B1F3A">
+              <p style="margin: 0; font-size: 15px; font-weight: 700; line-height: 20px; color: #0B1F3A">Hot Dog Review Board</p>
+              <p style="margin: 0; font-size: 13px; line-height: 18px; color: #5B6676">Chief Classification Officer</p>
+            </div>
+          </div>
+
+          <div style="flex: 0 0 168px; min-width: 0">
+            <p style="margin: 0 0 12px; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 20px; line-height: 26px; color: #0B1F3A">Oct 24, 2026</p>
+            <div style="padding-top: 6px; border-top: 1px solid #0B1F3A">
+              <p style="margin: 0; font-size: 15px; font-weight: 700; line-height: 20px; color: #0B1F3A">Date of issue</p>
+              <p style="margin: 0; font-size: 13px; line-height: 18px; color: #5B6676">EU-Central, Frankfurt</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer style="margin: auto 26px 0; padding: 12px 0 26px; border-top: 1px solid #D9DEE5">
+        <p style="margin: 0; font-size: 12px; line-height: 18px; color: #5B6676">This certificate attests to the visual classification of the submitted image under Policy v3.2. It makes no claim about ingredients, nutrition or food safety.</p>
+        <div style="display: flex; justify-content: space-between; gap: 16px; margin-top: 6px; font-size: 12px; line-height: 18px; color: #5B6676">
+          <p style="margin: 0">© 2026 HDX Classification Systems, Inc. · hdx.example</p>
+          <p style="margin: 0; white-space: nowrap">Certificate {{certNo}} · Page 1 of 1</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"verdict":{"editor":"enum","options":["hot_dog","not_hot_dog"],"default":"hot_dog"},"$preview":{"width":794,"height":1123}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.verdict ?? 'hot_dog';
+    const hot = v === 'hot_dog';
+    const certNo = hot ? 'HDX-C-0088213' : 'HDX-C-0088214';
+    const certCode = hot ? '7KQ2-M9XD' : '4TPW-R8LC';
+    const mono = 'ui-monospace, Menlo, Consolas, monospace';
+    const rows = [
+      ['Case ID', hot ? 'HDX-2026-1024-7731' : 'HDX-2026-1024-7732', true],
+      ['Issued', hot ? 'Oct 24, 2026 · 14:32:07.530 UTC' : 'Oct 24, 2026 · 14:32:07.556 UTC', false],
+      ['Image fingerprint', hot ? 'SHA-256 · 9f2c…e41a' : 'SHA-256 · 3b7e…a6f0', true],
+      ['Model', 'claude-opus-5-5 · HDX policy engine 3.2.1', true],
+      ['Confidence', hot ? '99.2%' : '98.7%', false],
+      ['Policy clause', hot ? 'Hot Dog Definition Policy v3.2, §2.1 — Canonical form' : 'Hot Dog Definition Policy v3.2, §3.5 — Flatbreads', false],
+      ['Processing time', hot ? '412 ms' : '438 ms', false]
+    ];
+    return {
+      isHotDog: hot,
+      isNotHotDog: !hot,
+      certNo: certNo,
+      certCode: certCode,
+      subject: hot ? 'Stadium Frank, 6 in.' : 'Concourse B counter item',
+      subjectRef: hot ? 'SKU BH-SF-06' : 'Image concourse_b_counter.jpg',
+      qrLabel: 'QR code for certificate ' + certNo + ', verification code ' + certCode,
+      detailRows: rows.map(function (r, i) {
+        return {
+          label: r[0],
+          value: r[1],
+          font: r[2] ? mono : 'inherit',
+          size: r[2] ? '13px' : '14px',
+          bg: i % 2 === 0 ? '#F3F5F8' : '#FFFFFF'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

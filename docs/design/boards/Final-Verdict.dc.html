@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HDX Verdict</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0B1F3A}a:hover{color:#1D3A66}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #3F4A5A; background: #F3F5F8">
+
+  <aside aria-label="Workspace sidebar" style="flex: 0 0 248px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; padding: 20px 16px; background: #0B1F3A; color: #C9D2DE">
+    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 4px 8px; color: #FFFFFF; text-decoration: none">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="0.5" y="0.5" width="31" height="31" rx="6" fill="#0B1F3A" stroke="#3A5175" stroke-width="1"></rect><rect x="4" y="10" width="24" height="8" rx="4" fill="#F2B705"></rect><path d="M6 16H26V18.5C26 21.5 23.5 24 20.5 24H11.5C8.5 24 6 21.5 6 18.5Z" fill="#FFFFFF"></path></svg>
+      <span style="display: flex; flex-direction: column; line-height: 1.15">
+        <span style="font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 22px; letter-spacing: 0.04em; color: #FFFFFF">HDX</span>
+        <span style="font-size: 12px; color: #9AA8BC">Hot Dog or Not · Enterprise Cloud</span>
+      </span>
+    </a>
+
+    <button type="button" aria-haspopup="listbox" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: 56px; padding: 10px 12px; border: 1px solid #2C4468; border-radius: 6px; background: #13294B; font-family: inherit; text-align: left; color: #FFFFFF; cursor: pointer">
+      <span style="display: flex; flex-direction: column; min-width: 0; line-height: 1.3">
+        <span style="font-size: 12px; color: #9AA8BC">Workspace</span>
+        <span style="font-size: 14px; font-weight: 700; color: #FFFFFF">Ballpark Holdings — QA</span>
+      </span>
+      <span style="display: inline-flex; color: #9AA8BC"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l4-4 4 4"></path><path d="M8 15l4 4 4-4"></path></svg></span>
+    </button>
+
+    <nav aria-label="Main">
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+        <li><a href="#" aria-current="page" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; background: #1E3A63; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none"><span style="display: inline-flex; color: #F2B705"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3"></path><path d="M16 4h3a1 1 0 0 1 1 1v3"></path><path d="M20 16v3a1 1 0 0 1-1 1h-3"></path><path d="M8 20H5a1 1 0 0 1-1-1v-3"></path><path d="M8 12h8"></path></svg></span>Classify</a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"></path><path d="M3 4v4h4"></path><path d="M12 8v4l3 2"></path></svg>History</a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="M9 13.5L8 21l4-2 4 2-1-7.5"></path></svg>Certificates</a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"></path><path d="M3 13l9 5 9-5"></path></svg>Batch jobs<span style="margin-left: auto; display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 11px; background: #24395A; font-size: 12px; font-weight: 700; color: #FFFFFF">2 running</span></a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11"></path><path d="M9 12h11"></path><path d="M9 18h11"></path><path d="M4.5 6h0.01"></path><path d="M4.5 12h0.01"></path><path d="M4.5 18h0.01"></path></svg>Audit log</a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M10.8 12.2L20 3"></path><path d="M16 7l3 3"></path></svg>API keys</a></li>
+        <li><a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #C9D2DE; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h9"></path><path d="M17 6h3"></path><circle cx="15" cy="6" r="2"></circle><path d="M4 12h3"></path><path d="M11 12h9"></path><circle cx="9" cy="12" r="2"></circle><path d="M4 18h11"></path><path d="M19 18h1"></path><circle cx="17" cy="18" r="2"></circle></svg>Admin</a></li>
+      </ul>
+    </nav>
+
+    <div style="margin-top: auto; padding: 16px 12px 0; border-top: 1px solid #24395A">
+      <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9AA8BC">Usage · October</p>
+      <p style="margin: 8px 0 0; font-size: 14px; color: #FFFFFF"><strong style="font-weight: 700">18,240</strong> of 50,000 classifications</p>
+      <div aria-hidden="true" style="height: 6px; margin-top: 10px; border-radius: 3px; background: #24395A; overflow: hidden"><div style="width: 36%; height: 6px; background: #F2B705"></div></div>
+      <p style="margin: 8px 0 0; font-size: 12px; color: #9AA8BC">Business plan · Resets Nov 1</p>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; padding: 16px 12px 4px; border-top: 1px solid #24395A">
+      <span aria-hidden="true" style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #F2B705; font-size: 14px; font-weight: 700; color: #0B1F3A">DK</span>
+      <span style="display: flex; flex-direction: column; min-width: 0; line-height: 1.3">
+        <span style="font-size: 14px; font-weight: 700; color: #FFFFFF">Dana Kessler</span>
+        <span style="font-size: 12px; color: #9AA8BC">Quality Lead · Admin</span>
+      </span>
+    </div>
+  </aside>
+
+  <div style="flex: 1 1 600px; min-width: 0; display: flex; flex-direction: column">
+    <header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; min-height: 64px; padding: 10px 32px; border-bottom: 1px solid #D9DEE5; background: #FFFFFF">
+      <nav aria-label="Breadcrumb">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px">
+          <li><a href="#" style="color: #3F4A5A; text-decoration: none">Classify</a></li>
+          <li aria-hidden="true" style="color: #5B6676">/</li>
+          <li><a href="#" style="color: #3F4A5A; text-decoration: none">Results</a></li>
+          <li aria-hidden="true" style="color: #5B6676">/</li>
+          <li aria-current="page" style="font-weight: 700; font-variant-numeric: tabular-nums; color: #0B1F3A">{{caseId}}</li>
+        </ol>
+      </nav>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; font-size: 12px; font-weight: 700; color: #3F4A5A"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"></path></svg>EU-Central · Frankfurt</span>
+        <div style="position: relative; display: flex; align-items: center">
+          <label for="case-search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search cases</label>
+          <span aria-hidden="true" style="position: absolute; left: 12px; display: inline-flex; color: #5B6676"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
+          <input id="case-search" type="search" placeholder="Search cases, certificates, users" style="width: 280px; max-width: 100%; height: 40px; padding: 0 12px 0 36px; border: 1px solid #7A8699; border-radius: 6px; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #0B1F3A">
+        </div>
+        <button type="button" aria-label="Help" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 0; border-radius: 6px; background: transparent; color: #0B1F3A; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-0.6 0.3-1 0.9-1 1.6V14"></path><path d="M12 17.5v0.01"></path></svg></button>
+        <button type="button" aria-label="Notifications" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 0; border-radius: 6px; background: transparent; color: #0B1F3A; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"></path><path d="M10 21h4"></path></svg></button>
+      </div>
+    </header>
+
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 24px; padding: 28px 32px 40px">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+        <div style="min-width: 0">
+          <h1 style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 30px; line-height: 1.2; color: #0B1F3A">Classification result</h1>
+          <p style="margin: 6px 0 0; font-size: 14px; color: #5B6676">Case <span style="font-weight: 600; font-variant-numeric: tabular-nums; color: #3F4A5A">{{caseId}}</span> · Submitted Oct 24, 2026 at 14:32:07 UTC · Web console</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+          <a href="#" style="font-size: 15px; font-weight: 700; color: #0B1F3A">View in History</a>
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border: 1px solid #0B1F3A; border-radius: 6px; background: #FFFFFF; font-size: 15px; font-weight: 700; color: #0B1F3A; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>New classification</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px">
+
+        <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+
+          <div aria-live="polite">
+            <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+              <section aria-labelledby="verdict-hot" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; padding: 24px; border-radius: 6px; background: #F2B705; color: #0B1F3A">
+                <figure style="flex: 0 1 212px; min-width: 0; margin: 0; padding: 10px; border: 1px solid #0B1F3A; border-radius: 6px; background: #FFFFFF">
+                  <svg width="240" height="168" viewBox="0 0 240 168" role="img" aria-label="Submitted image: a frankfurter with a line of mustard in a split bun, inside a detection frame" style="display: block; width: 100%; max-width: 190px; height: auto"><rect x="0" y="0" width="240" height="168" fill="#F3F5F8"></rect><ellipse cx="120" cy="146" rx="94" ry="8" fill="#D9DEE5"></ellipse><path d="M36 90C36 74 47 66 62 66H178C193 66 204 74 204 90Z" fill="#D9A55A" stroke="#0B1F3A" stroke-width="2.5" stroke-linejoin="round"></path><rect x="18" y="76" width="204" height="28" rx="14" fill="#B5523B" stroke="#0B1F3A" stroke-width="2.5"></rect><path d="M36 88L48 81L60 88L72 81L84 88L96 81L108 88L120 81L132 88L144 81L156 88L168 81L180 88L192 81L204 88" fill="none" stroke="#F2B705" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M30 96H210V102C210 118 197 130 181 130H59C43 130 30 118 30 102Z" fill="#E8B96E" stroke="#0B1F3A" stroke-width="2.5" stroke-linejoin="round"></path><path d="M50 116C84 122 156 122 190 116" fill="none" stroke="#C99247" stroke-width="2" stroke-linecap="round"></path><path d="M10 64V50H24M216 50H230V64M230 124V138H216M24 138H10V124" fill="none" stroke="#0B1F3A" stroke-width="3"></path><rect x="10" y="24" width="118" height="20" rx="2" fill="#0B1F3A"></rect><text x="18" y="38" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#FFFFFF">hot_dog · 0.992</text></svg>
+                  <figcaption style="margin-top: 8px; font-size: 12px; color: #3F4A5A">frankfurter_lot14.jpg · 2.4 MB</figcaption>
+                </figure>
+                <div style="flex: 1 1 340px; min-width: 0">
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px">
+                    <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0B1F3A">Verdict</p>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 8px; border: 2px solid #0B1F3A; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0B1F3A"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Final · Subject to appeal</span>
+                  </div>
+                  <h2 id="verdict-hot" style="margin: 10px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: clamp(44px, 3.9vw, 56px); line-height: 1; letter-spacing: 0.01em; color: #0B1F3A">HOT DOG</h2>
+                  <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5; color: #0B1F3A">Hot Dog Definition Policy v3.2, §2.1 — frankfurter seated lengthwise in a split bun.</p>
+                  <dl style="margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 12px 20px">
+                    <div style="padding-top: 10px; border-top: 2px solid #0B1F3A">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B1F3A">Confidence</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #0B1F3A">99.2%</dd>
+                    </div>
+                    <div style="padding-top: 10px; border-top: 2px solid #0B1F3A">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B1F3A">Processing time</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #0B1F3A">412 ms</dd>
+                    </div>
+                    <div style="padding-top: 10px; border-top: 2px solid #0B1F3A">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B1F3A">Clause applied</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #0B1F3A">§2.1</dd>
+                    </div>
+                  </dl>
+                </div>
+              </section>
+            </sc-if>
+            <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+              <section aria-labelledby="verdict-not" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; padding: 24px; border-radius: 6px; background: #0B1F3A; color: #FFFFFF">
+                <figure style="flex: 0 1 212px; min-width: 0; margin: 0; padding: 10px; border: 1px solid #FFFFFF; border-radius: 6px; background: #FFFFFF">
+                  <svg width="240" height="168" viewBox="0 0 240 168" role="img" aria-label="Submitted image: a slice of pepperoni pizza, inside a detection frame" style="display: block; width: 100%; max-width: 190px; height: auto"><rect x="0" y="0" width="240" height="168" fill="#F3F5F8"></rect><ellipse cx="120" cy="156" rx="60" ry="6" fill="#D9DEE5"></ellipse><path d="M48 54H192L120 150Z" fill="#F4D27A" stroke="#0B1F3A" stroke-width="2.5" stroke-linejoin="round"></path><path d="M49 56H191L183 66H57Z" fill="#C8553D"></path><circle cx="94" cy="84" r="11" fill="#B5523B" stroke="#0B1F3A" stroke-width="2"></circle><circle cx="146" cy="86" r="10" fill="#B5523B" stroke="#0B1F3A" stroke-width="2"></circle><circle cx="120" cy="116" r="9" fill="#B5523B" stroke="#0B1F3A" stroke-width="2"></circle><path d="M40 50C40 40 48 34 58 34H182C192 34 200 40 200 50C200 55 197 58 192 58H48C43 58 40 55 40 50Z" fill="#D9A55A" stroke="#0B1F3A" stroke-width="2.5" stroke-linejoin="round"></path><path d="M28 40V26H42M198 26H212V40M212 146V160H198M42 160H28V146" fill="none" stroke="#0B1F3A" stroke-width="3"></path><rect x="28" y="2" width="146" height="20" rx="2" fill="#0B1F3A"></rect><text x="36" y="16" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" font-weight="600" fill="#FFFFFF">not_hot_dog · 0.987</text></svg>
+                  <figcaption style="margin-top: 8px; font-size: 12px; color: #3F4A5A">concourse_b_counter.jpg · 1.9 MB</figcaption>
+                </figure>
+                <div style="flex: 1 1 340px; min-width: 0">
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px">
+                    <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B8C2D1">Verdict</p>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 8px; border: 2px solid #FFFFFF; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Final · Subject to appeal</span>
+                  </div>
+                  <h2 id="verdict-not" style="margin: 10px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: clamp(44px, 3.9vw, 56px); line-height: 1; letter-spacing: 0.01em; color: #FFFFFF">NOT HOT DOG</h2>
+                  <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.5; color: #D5DCE6">Hot Dog Definition Policy v3.2, §3.5 — flatbreads and pizza are excluded.</p>
+                  <dl style="margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 12px 20px">
+                    <div style="padding-top: 10px; border-top: 2px solid #B8C2D1">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B8C2D1">Confidence</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #FFFFFF">98.7%</dd>
+                    </div>
+                    <div style="padding-top: 10px; border-top: 2px solid #B8C2D1">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B8C2D1">Processing time</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #FFFFFF">438 ms</dd>
+                    </div>
+                    <div style="padding-top: 10px; border-top: 2px solid #B8C2D1">
+                      <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B8C2D1">Clause applied</dt>
+                      <dd style="margin: 2px 0 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 28px; line-height: 1.15; color: #FFFFFF">§3.5</dd>
+                    </div>
+                  </dl>
+                </div>
+              </section>
+            </sc-if>
+          </div>
+
+          <section aria-labelledby="report-title" style="border: 1px solid #D9DEE5; border-radius: 6px; background: #FFFFFF">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding: 20px 24px; border-bottom: 1px solid #D9DEE5">
+              <h2 id="report-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 22px; line-height: 1.3; color: #0B1F3A">Classification report</h2>
+              <p style="margin: 0; font-size: 13px; color: #5B6676">Generated automatically · Read-only</p>
+            </div>
+            <dl style="margin: 0">
+              <sc-for list="{{reportRows}}" as="row" hint-placeholder-count="8">
+                <div style="display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 10px 24px; background: {{row.bg}}">
+                  <dt style="flex: 0 0 196px; font-size: 14px; font-weight: 600; color: #5B6676">{{row.label}}</dt>
+                  <dd style="flex: 1 1 260px; min-width: 0; margin: 0; font-size: 15px; font-variant-numeric: tabular-nums; color: #0B1F3A">{{row.value}}</dd>
+                </div>
+              </sc-for>
+            </dl>
+
+            <div style="padding: 24px; border-top: 1px solid #D9DEE5">
+              <div style="padding: 20px; border: 1px solid #D9DEE5; border-radius: 6px; background: #F3F5F8">
+                <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #0B1F3A">Why this verdict</h3>
+                <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F4A5A">A single grilled frankfurter is seated lengthwise in a split bun, with a continuous line of yellow mustard along the top. This matches the canonical form defined in §2.1. No disqualifying features were found.</p>
+                  <ul style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">Split bun</li>
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">Encased sausage</li>
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">Mustard (non-disqualifying)</li>
+                  </ul>
+                </sc-if>
+                <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+                  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F4A5A">The image shows a triangular slice of flatbread with tomato sauce, melted cheese and pepperoni. There is no split bun and no encased sausage. Flatbreads are excluded under §3.5, regardless of toppings.</p>
+                  <ul style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">Flatbread</li>
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">Pepperoni (not encased)</li>
+                    <li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF; font-size: 13px; font-weight: 600; color: #0B1F3A">No bun detected</li>
+                  </ul>
+                </sc-if>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 20px">
+                <button type="button" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border: 1px solid #0B1F3A; border-radius: 6px; background: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; color: #0B1F3A; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M8 20h8"></path></svg>Request human review</button>
+                <p style="flex: 1 1 260px; min-width: 0; margin: 0; font-size: 13px; line-height: 1.5; color: #5B6676">Reviews are decided by the Hot Dog Review Board, median response four business hours. The original verdict stands until a ruling is issued.</p>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="audit-title" style="border: 1px solid #D9DEE5; border-radius: 6px; background: #FFFFFF">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; padding: 20px 24px; border-bottom: 1px solid #D9DEE5">
+              <h2 id="audit-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 22px; line-height: 1.3; color: #0B1F3A">Audit trail</h2>
+              <p style="margin: 0; font-size: 13px; color: #5B6676">Immutable · SHA-256 chained</p>
+            </div>
+            <ol style="list-style: none; margin: 0; padding: 20px 24px 4px">
+              <sc-for list="{{auditSteps}}" as="step" hint-placeholder-count="4">
+                <li style="display: flex; gap: 14px">
+                  <div aria-hidden="true" style="flex: 0 0 22px; display: flex; flex-direction: column; align-items: center">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #0B1F3A; color: #FFFFFF"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+                    <span style="flex: 1 1 auto; width: 2px; min-height: 16px; background: #D9DEE5; display: {{step.line}}"></span>
+                  </div>
+                  <div style="flex: 1 1 auto; min-width: 0; padding-bottom: 16px">
+                    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px">
+                      <h3 style="margin: 0; font-size: 15px; font-weight: 700; line-height: 22px; color: #0B1F3A">{{step.title}}</h3>
+                      <p style="margin: 0; font-size: 13px; line-height: 22px; font-variant-numeric: tabular-nums; color: #5B6676">{{step.time}}</p>
+                    </div>
+                    <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: #3F4A5A">{{step.detail}}</p>
+                  </div>
+                </li>
+              </sc-for>
+            </ol>
+            <div style="padding: 14px 24px 18px; border-top: 1px solid #D9DEE5">
+              <a href="#" style="font-size: 14px; font-weight: 700; color: #0B1F3A">Export audit log (CSV)</a>
+            </div>
+          </section>
+
+        </div>
+
+        <aside aria-label="Certificate and global feed" style="flex: 1 1 384px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+
+          <section aria-labelledby="cert-title" style="border: 1px solid #D9DEE5; border-radius: 6px; background: #FFFFFF; overflow: hidden">
+            <div style="padding: 16px 20px; border-bottom: 1px solid #D9DEE5; background: #F3F5F8">
+              <div style="padding: 4px; border: 1px solid #0B1F3A; border-radius: 2px; background: #FFFFFF">
+                <div style="border: 1px solid #D9DEE5">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 12px 8px 14px; background: #0B1F3A">
+                    <span style="display: flex; flex-direction: column; min-width: 0; line-height: 1.2">
+                      <span style="font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 18px; letter-spacing: 0.04em; color: #FFFFFF">HDX</span>
+                      <span style="font-size: 12px; color: #B8C2D1">Classification Authority</span>
+                    </span>
+                    <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true" style="flex: 0 0 auto"><defs><path id="final-verdict-seal-ring" d="M32 8a24 24 0 1 1 0 48a24 24 0 1 1 0-48"></path></defs><circle cx="32" cy="32" r="31" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="1.5"></circle><circle cx="32" cy="32" r="28.5" fill="none" stroke="#F2B705" stroke-width="1"></circle><text fill="#FFFFFF" font-family="'Source Sans 3', Arial, sans-serif" font-size="6" font-weight="700" letter-spacing="0.6"><textPath href="#final-verdict-seal-ring" startOffset="0">HDX · CERTIFIED · POLICY 3.2 ·</textPath></text><circle cx="32" cy="32" r="19" fill="#F2B705" stroke="#FFFFFF" stroke-width="1"></circle><text x="32" y="36.5" text-anchor="middle" fill="#0B1F3A" font-family="'Source Serif 4', Georgia, serif" font-size="13" font-weight="600" letter-spacing="0.5">HDX</text></svg>
+                  </div>
+                  <div style="padding: 12px 16px 14px">
+                    <h2 id="cert-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 18px; line-height: 1.25; color: #0B1F3A">Certificate of Classification</h2>
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px">
+                      <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+                        <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 4px; background: #F2B705; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; color: #0B1F3A">HOT DOG</span>
+                      </sc-if>
+                      <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+                        <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 4px; background: #0B1F3A; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; color: #FFFFFF">NOT HOT DOG</span>
+                      </sc-if>
+                      <span style="font-size: 13px; font-variant-numeric: tabular-nums; color: #3F4A5A">{{certSummary}}</span>
+                    </div>
+                    <p style="margin: 8px 0 0; font-size: 12px; line-height: 1.45; color: #5B6676">Issued to Ballpark Holdings · Oct 24, 2026<br>Signed by the Hot Dog Review Board</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 20px">
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px">
+                <div style="flex: 0 0 auto; display: flex; padding: 4px; border: 1px solid #D9DEE5; border-radius: 4px; background: #FFFFFF">
+                  <svg viewBox="0 0 29 29" width="132" height="132" shape-rendering="crispEdges" role="img" aria-label="QR code linking to the public verification page for this certificate"><rect x="0" y="0" width="29" height="29" fill="#FFFFFF"></rect><g fill="#0B1F3A"><rect x="2" y="2" width="7" height="1"></rect><rect x="12" y="2" width="3" height="1"></rect><rect x="16" y="2" width="2" height="1"></rect><rect x="20" y="2" width="7" height="1"></rect><rect x="2" y="3" width="1" height="1"></rect><rect x="8" y="3" width="1" height="1"></rect><rect x="11" y="3" width="2" height="1"></rect><rect x="15" y="3" width="1" height="1"></rect><rect x="18" y="3" width="1" height="1"></rect><rect x="20" y="3" width="1" height="1"></rect><rect x="26" y="3" width="1" height="1"></rect><rect x="2" y="4" width="1" height="1"></rect><rect x="4" y="4" width="3" height="1"></rect><rect x="8" y="4" width="1" height="1"></rect><rect x="10" y="4" width="1" height="1"></rect><rect x="14" y="4" width="1" height="1"></rect><rect x="16" y="4" width="2" height="1"></rect><rect x="20" y="4" width="1" height="1"></rect><rect x="22" y="4" width="3" height="1"></rect><rect x="26" y="4" width="1" height="1"></rect><rect x="2" y="5" width="1" height="1"></rect><rect x="4" y="5" width="3" height="1"></rect><rect x="8" y="5" width="1" height="1"></rect><rect x="11" y="5" width="1" height="1"></rect><rect x="17" y="5" width="2" height="1"></rect><rect x="20" y="5" width="1" height="1"></rect><rect x="22" y="5" width="3" height="1"></rect><rect x="26" y="5" width="1" height="1"></rect><rect x="2" y="6" width="1" height="1"></rect><rect x="4" y="6" width="3" height="1"></rect><rect x="8" y="6" width="1" height="1"></rect><rect x="13" y="6" width="1" height="1"></rect><rect x="18" y="6" width="1" height="1"></rect><rect x="20" y="6" width="1" height="1"></rect><rect x="22" y="6" width="3" height="1"></rect><rect x="26" y="6" width="1" height="1"></rect><rect x="2" y="7" width="1" height="1"></rect><rect x="8" y="7" width="1" height="1"></rect><rect x="10" y="7" width="5" height="1"></rect><rect x="18" y="7" width="1" height="1"></rect><rect x="20" y="7" width="1" height="1"></rect><rect x="26" y="7" width="1" height="1"></rect><rect x="2" y="8" width="7" height="1"></rect><rect x="10" y="8" width="1" height="1"></rect><rect x="12" y="8" width="1" height="1"></rect><rect x="14" y="8" width="1" height="1"></rect><rect x="16" y="8" width="1" height="1"></rect><rect x="18" y="8" width="1" height="1"></rect><rect x="20" y="8" width="7" height="1"></rect><rect x="11" y="9" width="1" height="1"></rect><rect x="13" y="9" width="1" height="1"></rect><rect x="15" y="9" width="1" height="1"></rect><rect x="17" y="9" width="2" height="1"></rect><rect x="4" y="10" width="1" height="1"></rect><rect x="6" y="10" width="1" height="1"></rect><rect x="8" y="10" width="4" height="1"></rect><rect x="13" y="10" width="2" height="1"></rect><rect x="16" y="10" width="2" height="1"></rect><rect x="19" y="10" width="1" height="1"></rect><rect x="23" y="10" width="2" height="1"></rect><rect x="4" y="11" width="3" height="1"></rect><rect x="10" y="11" width="5" height="1"></rect><rect x="16" y="11" width="8" height="1"></rect><rect x="3" y="12" width="2" height="1"></rect><rect x="8" y="12" width="1" height="1"></rect><rect x="10" y="12" width="1" height="1"></rect><rect x="14" y="12" width="1" height="1"></rect><rect x="16" y="12" width="1" height="1"></rect><rect x="18" y="12" width="1" height="1"></rect><rect x="21" y="12" width="1" height="1"></rect><rect x="26" y="12" width="1" height="1"></rect><rect x="3" y="13" width="1" height="1"></rect><rect x="7" y="13" width="1" height="1"></rect><rect x="14" y="13" width="3" height="1"></rect><rect x="18" y="13" width="2" height="1"></rect><rect x="24" y="13" width="1" height="1"></rect><rect x="4" y="14" width="1" height="1"></rect><rect x="8" y="14" width="2" height="1"></rect><rect x="11" y="14" width="3" height="1"></rect><rect x="18" y="14" width="4" height="1"></rect><rect x="23" y="14" width="2" height="1"></rect><rect x="2" y="15" width="1" height="1"></rect><rect x="6" y="15" width="1" height="1"></rect><rect x="10" y="15" width="2" height="1"></rect><rect x="17" y="15" width="1" height="1"></rect><rect x="19" y="15" width="2" height="1"></rect><rect x="24" y="15" width="1" height="1"></rect><rect x="3" y="16" width="3" height="1"></rect><rect x="8" y="16" width="1" height="1"></rect><rect x="10" y="16" width="1" height="1"></rect><rect x="12" y="16" width="1" height="1"></rect><rect x="15" y="16" width="2" height="1"></rect><rect x="19" y="16" width="1" height="1"></rect><rect x="21" y="16" width="1" height="1"></rect><rect x="23" y="16" width="3" height="1"></rect><rect x="4" y="17" width="1" height="1"></rect><rect x="6" y="17" width="2" height="1"></rect><rect x="10" y="17" width="1" height="1"></rect><rect x="12" y="17" width="1" height="1"></rect><rect x="14" y="17" width="2" height="1"></rect><rect x="22" y="17" width="1" height="1"></rect><rect x="24" y="17" width="3" height="1"></rect><rect x="2" y="18" width="1" height="1"></rect><rect x="6" y="18" width="1" height="1"></rect><rect x="8" y="18" width="2" height="1"></rect><rect x="12" y="18" width="1" height="1"></rect><rect x="15" y="18" width="2" height="1"></rect><rect x="18" y="18" width="5" height="1"></rect><rect x="24" y="18" width="3" height="1"></rect><rect x="10" y="19" width="1" height="1"></rect><rect x="15" y="19" width="2" height="1"></rect><rect x="18" y="19" width="1" height="1"></rect><rect x="22" y="19" width="3" height="1"></rect><rect x="26" y="19" width="1" height="1"></rect><rect x="2" y="20" width="7" height="1"></rect><rect x="10" y="20" width="1" height="1"></rect><rect x="14" y="20" width="1" height="1"></rect><rect x="16" y="20" width="3" height="1"></rect><rect x="20" y="20" width="1" height="1"></rect><rect x="22" y="20" width="2" height="1"></rect><rect x="25" y="20" width="2" height="1"></rect><rect x="2" y="21" width="1" height="1"></rect><rect x="8" y="21" width="1" height="1"></rect><rect x="10" y="21" width="1" height="1"></rect><rect x="14" y="21" width="1" height="1"></rect><rect x="17" y="21" width="2" height="1"></rect><rect x="22" y="21" width="3" height="1"></rect><rect x="26" y="21" width="1" height="1"></rect><rect x="2" y="22" width="1" height="1"></rect><rect x="4" y="22" width="3" height="1"></rect><rect x="8" y="22" width="1" height="1"></rect><rect x="11" y="22" width="13" height="1"></rect><rect x="26" y="22" width="1" height="1"></rect><rect x="2" y="23" width="1" height="1"></rect><rect x="4" y="23" width="3" height="1"></rect><rect x="8" y="23" width="1" height="1"></rect><rect x="10" y="23" width="1" height="1"></rect><rect x="13" y="23" width="5" height="1"></rect><rect x="22" y="23" width="1" height="1"></rect><rect x="25" y="23" width="2" height="1"></rect><rect x="2" y="24" width="1" height="1"></rect><rect x="4" y="24" width="3" height="1"></rect><rect x="8" y="24" width="1" height="1"></rect><rect x="10" y="24" width="2" height="1"></rect><rect x="13" y="24" width="3" height="1"></rect><rect x="19" y="24" width="2" height="1"></rect><rect x="22" y="24" width="1" height="1"></rect><rect x="25" y="24" width="1" height="1"></rect><rect x="2" y="25" width="1" height="1"></rect><rect x="8" y="25" width="1" height="1"></rect><rect x="10" y="25" width="4" height="1"></rect><rect x="16" y="25" width="2" height="1"></rect><rect x="19" y="25" width="1" height="1"></rect><rect x="23" y="25" width="1" height="1"></rect><rect x="26" y="25" width="1" height="1"></rect><rect x="2" y="26" width="7" height="1"></rect><rect x="12" y="26" width="3" height="1"></rect><rect x="18" y="26" width="2" height="1"></rect><rect x="22" y="26" width="2" height="1"></rect><rect x="25" y="26" width="1" height="1"></rect></g></svg>
+                </div>
+                <dl style="flex: 1 1 150px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 10px">
+                  <div>
+                    <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6676">Certificate</dt>
+                    <dd style="margin: 2px 0 0; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 600; color: #0B1F3A">{{certNo}}</dd>
+                  </div>
+                  <div>
+                    <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6676">Verification code</dt>
+                    <dd style="margin: 2px 0 0; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 18px; font-weight: 700; letter-spacing: 0.06em; color: #0B1F3A">{{certCode}}</dd>
+                  </div>
+                  <div>
+                    <dt style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6676">Status</dt>
+                    <dd style="margin: 2px 0 0; display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: #1E7B4F"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.8 2.8L16.5 9.5"></path></svg>Valid</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; padding: 0 18px; border: 1px solid #0B1F3A; border-radius: 6px; background: #0B1F3A; font-family: inherit; font-size: 15px; font-weight: 700; color: #FFFFFF; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Download certificate (PDF)</button>
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 18px; border: 1px solid #0B1F3A; border-radius: 6px; background: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; color: #0B1F3A; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V4h10v4"></path><path d="M7 17H5a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"></path><path d="M7 14h10v6H7z"></path></svg>Print QR labels</button>
+                <p style="margin: 2px 0 0; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.5; color: #3F4A5A"><span aria-hidden="true" style="flex: 0 0 auto; display: inline-flex; margin-top: 2px; color: #0B1F3A"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></span><span>Print this QR on packaging, menus or trays. Customers scan it to verify.</span></p>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid #D9DEE5">
+                <sc-if value="{{isHotDog}}" hint-placeholder-val="{{ true }}">
+                  <label for="verify-link-hot" style="display: block; font-size: 13px; font-weight: 700; color: #0B1F3A">Verification link</label>
+                  <input id="verify-link-hot" type="text" readonly="readonly" value="hdx.example/v/7KQ2-M9XD" style="display: block; width: 100%; height: 40px; margin-top: 6px; padding: 0 12px; border: 1px solid #7A8699; border-radius: 6px; background: #F3F5F8; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #0B1F3A">
+                </sc-if>
+                <sc-if value="{{isNotHotDog}}" hint-placeholder-val="{{ true }}">
+                  <label for="verify-link-not" style="display: block; font-size: 13px; font-weight: 700; color: #0B1F3A">Verification link</label>
+                  <input id="verify-link-not" type="text" readonly="readonly" value="hdx.example/v/4TPW-R8LC" style="display: block; width: 100%; height: 40px; margin-top: 6px; padding: 0 12px; border: 1px solid #7A8699; border-radius: 6px; background: #F3F5F8; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #0B1F3A">
+                </sc-if>
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 18px; border: 1px solid #0B1F3A; border-radius: 6px; background: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; color: #0B1F3A; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>Copy verification link</button>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="feed-title" style="border: 1px solid #D9DEE5; border-radius: 6px; background: #FFFFFF; overflow: hidden">
+            <div style="padding: 16px 20px 14px; border-bottom: 1px solid #D9DEE5">
+              <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px">
+                <h2 id="feed-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 22px; line-height: 1.3; color: #0B1F3A">Global feed</h2>
+                <p style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #1E7B4F"><span aria-hidden="true" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #1E7B4F"></span>Live · 1,204 verdicts/s</p>
+              </div>
+              <p style="margin: 4px 0 0; font-size: 13px; font-variant-numeric: tabular-nums; color: #5B6676">Today: 48,213,906 verdicts · 31.4% hot dogs</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 8px 16px; border-bottom: 1px solid #D9DEE5; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #5B6676">
+              <span style="flex: 0 0 60px">Time UTC</span>
+              <span style="flex: 0 0 52px">Region</span>
+              <span style="flex: 1 1 0; min-width: 0">Verdict</span>
+              <span style="flex: 0 0 80px; text-align: right">Confidence</span>
+            </div>
+            <ol aria-label="Latest verdicts worldwide" style="list-style: none; margin: 0; padding: 0">
+              <sc-for list="{{feed}}" as="row" hint-placeholder-count="12">
+                <li style="display: flex; align-items: center; gap: 10px; min-height: 38px; padding: 6px 16px; border-bottom: 1px solid #D9DEE5; background: {{row.bg}}; font-size: 13px">
+                  <span style="flex: 0 0 60px; font-variant-numeric: tabular-nums; color: #5B6676">{{row.time}}</span>
+                  <span style="flex: 0 0 52px; font-weight: 600; color: #0B1F3A">{{row.region}}</span>
+                  <span style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+                    <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 4px; background: {{row.chipBg}}; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; color: {{row.chipFg}}">{{row.verdict}}</span>
+                    <span style="display: {{row.tagDisplay}}; align-items: center; height: 20px; padding: 0 6px; border: 1px solid #0B1F3A; border-radius: 4px; font-size: 12px; font-weight: 700; white-space: nowrap; color: #0B1F3A">This case</span>
+                  </span>
+                  <span style="flex: 0 0 80px; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: #0B1F3A">{{row.conf}}</span>
+                </li>
+              </sc-for>
+            </ol>
+            <div style="padding: 12px 16px 14px">
+              <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #5B6676">Anonymised. The feed shows region, verdict and confidence only. Images never leave your workspace.</p>
+              <p style="margin: 10px 0 0; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 10px; border-top: 1px solid #D9DEE5; font-size: 13px; color: #3F4A5A"><span>Ambiguous verdicts issued, all time</span><strong style="font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 18px; line-height: 1; color: #0B1F3A">0</strong></p>
+            </div>
+          </section>
+
+        </aside>
+      </div>
+    </main>
+
+    <footer style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 16px 32px; border-top: 1px solid #D9DEE5; background: #FFFFFF; font-size: 13px; color: #5B6676">
+      <p style="margin: 0">© 2026 HDX Classification Systems, Inc. · Hot Dog Definition Policy v3.2 · All verdicts are final, subject to appeal.</p>
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #1E7B4F"></span>All systems operational · p50 412 ms</p>
+    </footer>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"verdict":{"editor":"enum","options":["hot_dog","not_hot_dog"],"default":"hot_dog"},"$preview":{"width":1440,"height":1800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.verdict ?? 'hot_dog';
+    const hot = v === 'hot_dog';
+    const MUSTARD = '#F2B705';
+    const NAVY = '#0B1F3A';
+    const caseId = hot ? 'HDX-2026-1024-7731' : 'HDX-2026-1024-7732';
+    const certNo = hot ? 'HDX-C-0088213' : 'HDX-C-0088214';
+    const certCode = hot ? '7KQ2-M9XD' : '4TPW-R8LC';
+    const fileName = hot ? 'frankfurter_lot14.jpg' : 'concourse_b_counter.jpg';
+    const rows = [
+      ['Case ID', caseId],
+      ['Timestamp', hot ? 'Oct 24, 2026 · 14:32:07.530 UTC' : 'Oct 24, 2026 · 14:32:07.556 UTC'],
+      ['Submitted by', 'Dana Kessler, Quality Lead · Web console'],
+      ['Source image', hot ? fileName + ' · 2.4 MB · 3024 × 4032 px' : fileName + ' · 1.9 MB · 3024 × 4032 px'],
+      ['Model version', 'claude-opus-5-5 · HDX policy engine 3.2.1'],
+      ['Confidence', hot ? '99.2%' : '98.7%'],
+      ['Policy clause applied', hot ? 'Hot Dog Definition Policy v3.2, §2.1 — Canonical form' : 'Hot Dog Definition Policy v3.2, §3.5 — Flatbreads'],
+      ['Image retention', 'Auto-deletes Oct 25, 2026 · 14:32 UTC']
+    ];
+    const steps = [
+      { title: 'Uploaded', time: '14:32:07.118', detail: fileName + ' received from Dana Kessler via Web console.' },
+      { title: 'Scanned', time: '14:32:07.241', detail: 'Image normalized and screened. One food item detected; no faces or personal data.' },
+      { title: 'Classified', time: hot ? '14:32:07.530' : '14:32:07.556', detail: hot ? 'HOT DOG at 99.2% confidence under Policy v3.2, §2.1.' : 'NOT HOT DOG at 98.7% confidence under Policy v3.2, §3.5.' },
+      { title: 'Certificate issued', time: hot ? '14:32:07.612' : '14:32:07.640', detail: 'Certificate ' + certNo + ' signed. QR code and public verification page issued.' }
+    ];
+    const feedSrc = [
+      ['14:32:07', 'EU-C', hot, hot ? '99.2' : '98.7', true],
+      ['14:32:07', 'US-E', false, '97.4', false],
+      ['14:32:06', 'AP-NE', false, '99.8', false],
+      ['14:32:06', 'US-C', true, '98.1', false],
+      ['14:32:06', 'EU-W', false, '92.6', false],
+      ['14:32:05', 'SA-E', false, '96.3', false],
+      ['14:32:05', 'US-W', true, '99.5', false],
+      ['14:32:05', 'AP-SE', false, '98.8', false],
+      ['14:32:04', 'EU-N', true, '99.0', false],
+      ['14:32:04', 'AF-S', false, '97.2', false],
+      ['14:32:04', 'US-E', false, '94.7', false],
+      ['14:32:03', 'AP-S', false, '95.9', false]
+    ];
+    return {
+      isHotDog: hot,
+      isNotHotDog: !hot,
+      caseId: caseId,
+      certNo: certNo,
+      certCode: certCode,
+      certSummary: hot ? 'Policy v3.2, §2.1 · 99.2%' : 'Policy v3.2, §3.5 · 98.7%',
+      reportRows: rows.map(function (r, i) {
+        return { label: r[0], value: r[1], bg: i % 2 === 0 ? '#F3F5F8' : '#FFFFFF' };
+      }),
+      auditSteps: steps.map(function (s, i) {
+        return { title: s.title, time: s.time, detail: s.detail, line: i === steps.length - 1 ? 'none' : 'block' };
+      }),
+      feed: feedSrc.map(function (r, i) {
+        return {
+          time: r[0],
+          region: r[1],
+          verdict: r[2] ? 'HOT DOG' : 'NOT HOT DOG',
+          chipBg: r[2] ? MUSTARD : NAVY,
+          chipFg: r[2] ? NAVY : '#FFFFFF',
+          conf: r[3],
+          bg: r[4] ? '#FDF3D0' : (i % 2 === 0 ? '#F3F5F8' : '#FFFFFF'),
+          tagDisplay: r[4] ? 'inline-flex' : 'none'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

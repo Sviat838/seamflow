@@ -1,0 +1,209 @@
+{
+  "business": [
+    {
+      "title": "Certified Hot Dog labels on packaging",
+      "who": "Packaged-food brands and private-label sausage producers",
+      "problem": "On a crowded shelf a brand has few ways to make a product a talking point, and no neutral third party has ever certified that the product is, visually, a hot dog.",
+      "how": "The brand classifies a product photo, issues a Certificate of Classification and prints its QR from Print QR labels onto the pack. Shoppers scan it and land on the public verification page, and the brand sees the scan count. Every label also advertises HDX, which makes this the growth loop. The value is marketing, not regulation.",
+      "feature": "Certificate of Classification PDF, Print QR labels, public verification page, scan count",
+      "realValue": "plausible"
+    },
+    {
+      "title": "Window decals for vendors and trucks",
+      "who": "Food trucks, street carts and independent hot dog stands",
+      "problem": "Small vendors need cheap signage that starts a conversation and gives people walking past a reason to stop.",
+      "how": "Print the QR label sheet and stick it on the truck window, the menu board or the napkin dispenser. Customers scan it while they queue. In practice it is a conversation piece and free novelty marketing, not a quality mark.",
+      "feature": "Print QR labels, public verification page",
+      "realValue": "novelty"
+    },
+    {
+      "title": "Category audits for delivery marketplaces",
+      "who": "Catalogue and trust teams at food delivery and ordering marketplaces",
+      "problem": "Restaurant listings get filed in the wrong category or use photos of something else. A Hot Dogs category full of burgers damages trust and conversion.",
+      "how": "A nightly batch job sends every photo in the category through the REST API. NOT HOT DOG results come back in a CSV with case IDs and go to the catalogue team's queue. The value is real but narrow: it audits one category, and it judges the listing photo, not the dish that is actually delivered.",
+      "feature": "Batch processing, REST API, CSV export, audit log",
+      "realValue": "real"
+    },
+    {
+      "title": "Wrong-item claim triage",
+      "who": "Customer support teams at delivery platforms and restaurants",
+      "problem": "Customers send photos saying the hot dog they ordered arrived as something else, and agents judge these claims inconsistently.",
+      "how": "Agents, or the helpdesk through the API, run the customer's photo through HDX and attach the verdict and case ID to the ticket, so every claim is judged against the same published policy. Caveat: it confirms what the photo shows, not that the photo is of the delivered order. It supports the agent's decision; it does not make it.",
+      "feature": "REST API, case IDs, audit log, Hot Dog Definition Policy",
+      "realValue": "plausible"
+    },
+    {
+      "title": "Multi-site presentation audits",
+      "who": "Quality leads at franchise headquarters and stadium concession operators",
+      "problem": "Across dozens of outlets, the item sold as a hot dog drifts into flatbread wraps, split buns or sliced sausage on a plate. Headquarters needs a consistent, documented check of how the item is presented.",
+      "how": "Outlet staff photograph the product as served into a shared team workspace. Each verdict cites a policy section and is logged by site, user and time, so headquarters can see which counters are drifting. It audits visual form only, never hygiene, temperature or recipe.",
+      "feature": "Team workspaces, Google SSO, audit log, history, Hot Dog Definition Policy v3.2",
+      "realValue": "plausible"
+    },
+    {
+      "title": "Order accuracy at the pass",
+      "who": "Stadium and arena caterers running high-volume concessions",
+      "problem": "At peak hours wrong items go out on trays. The mistake is found at the seat, where it costs the most to fix.",
+      "how": "A camera at the pass sends each plated hot dog line item to the API. If a hot dog order photographs as NOT HOT DOG, a webhook alerts the expo screen. Verdicts take about 400 ms, which suits a pass, but this needs a camera integration and only covers the hot dog line.",
+      "feature": "REST API, webhooks, sub-second verdicts",
+      "realValue": "plausible"
+    },
+    {
+      "title": "UGC campaign moderation",
+      "who": "Brand and agency social teams running photo contests and campaigns",
+      "problem": "A campaign asking fans for hot dog photos gets thousands of entries, many off-topic, and manual moderation is slow and inconsistent.",
+      "how": "Entries come in through the API. Webhooks send HOT DOG entries to the gallery queue and NOT HOT DOG entries to a decline with a reason, and disputed entries go to the Review Board. The binary verdict is exactly the entry test. A separate check for inappropriate content is still needed.",
+      "feature": "REST API, webhooks, batch processing, appeals to the Hot Dog Review Board",
+      "realValue": "real"
+    },
+    {
+      "title": "Neutral arbitration for cook-offs",
+      "who": "Organisers of hot dog cook-offs, county fairs and creative-category competitions",
+      "problem": "Creative entries push the boundary, rival competitors dispute eligibility, and organisers want a neutral, published standard.",
+      "how": "Each entry is classified under the public Hot Dog Definition Policy, disputes go to the Hot Dog Review Board, and winners get a Certificate of Classification for the trophy wall. It is mostly theatre, but published rules and a route to appeal do cut down arguments.",
+      "feature": "Hot Dog Definition Policy, appeals, Certificate of Classification",
+      "realValue": "novelty"
+    },
+    {
+      "title": "A teaching model for classification",
+      "who": "Instructors, bootcamps, science centres, and developers learning vision APIs",
+      "problem": "Teaching classification needs a task everyone understands at once, with written labelling rules, clear edge cases and a human-review step to discuss.",
+      "how": "Students call the REST API and compare confidence and reasoning on edge cases (corn dog, bratwurst, sausage roll). They read the public policy as an example of labelling guidelines and use appeals to discuss human review. Developers use the webhooks as a low-stakes integration test fixture.",
+      "feature": "REST API, webhooks, confidence and reasoning, public policy, appeals",
+      "realValue": "real"
+    },
+    {
+      "title": "Dataset hygiene for food-vision teams",
+      "who": "ML and data teams that maintain food image datasets",
+      "problem": "Training sets labelled hot dog contain mislabelled images, and those images degrade the models trained on them.",
+      "how": "Upload the class as a zip for batch processing, export the NOT HOT DOG and low-confidence results as a CSV, and send them for manual relabelling. This is real value for exactly one label. Teams with broader taxonomies will need more than a binary answer.",
+      "feature": "Batch processing, CSV export, confidence scores",
+      "realValue": "real"
+    }
+  ],
+  "consumer": [
+    {
+      "title": "Settle the household debate",
+      "who": "Friends, families, coworkers and group chats",
+      "problem": "Arguments over whether a particular item counts as a hot dog never end, because nobody involved has any authority.",
+      "how": "Upload the photo with no signup. You get a binary verdict, a confidence score, a one-line reason and the policy section that decided it, and you can share the verdict link. If the losing side insists, it can appeal to the Hot Dog Review Board. The entertainment value is real, and it is the main reason consumers will come.",
+      "feature": "Instant upload, confidence and reasoning, policy citation, shareable verdict link, appeals",
+      "realValue": "real"
+    },
+    {
+      "title": "Verify a product label by scan",
+      "who": "Shoppers, diners and stadium fans who see an HDX label on a pack, menu or tray",
+      "problem": "They see a Certified Hot Dog QR and want to know whether it is genuine.",
+      "how": "Scanning opens the public verification page: product, SKU, issuer, issue date, Valid status and the scope disclaimer. An unknown code shows as unverified. For the shopper this is a novelty, since they already suspected it was a hot dog, but it closes the growth loop and keeps certificates honest.",
+      "feature": "QR certificate, public verification page",
+      "realValue": "novelty"
+    },
+    {
+      "title": "A definitive spoken answer",
+      "who": "Blind and low-vision people who use screen readers or phone cameras",
+      "problem": "General image descriptions can be long and hedged, and sometimes a person wants one definite answer about what an item looks like.",
+      "how": "They capture the item with the phone camera. The verdict is announced to the screen reader as one phrase with its confidence and shown in high-contrast bands. It describes visual form only. It says nothing about ingredients, allergens or whether the food is safe to eat, and the interface must say so.",
+      "feature": "Mobile camera capture, screen-reader verdict announcement, high-contrast verdict bands",
+      "realValue": "plausible"
+    },
+    {
+      "title": "Party game: get it certified",
+      "who": "Friends at parties and game nights, and bars running quiz nights",
+      "problem": "Groups want a quick, shareable game with a referee nobody can argue with.",
+      "how": "Players arrange household objects to look like a hot dog and compete for the highest-confidence HOT DOG verdict. Losers appeal to the Review Board, and every round shows up, anonymised, in the global feed.",
+      "feature": "Instant upload, confidence score, global feed, appeals",
+      "realValue": "novelty"
+    },
+    {
+      "title": "A certificate for the backyard grill",
+      "who": "Home cooks and grill enthusiasts",
+      "problem": "They want a keepsake, or something to share, for a cookout creation.",
+      "how": "Classify the photo and download the Certificate of Classification PDF, with its seal, QR and verification code. Frame it or post it, and anyone can scan it to check it is genuine.",
+      "feature": "Certificate of Classification PDF, QR verification",
+      "realValue": "novelty"
+    },
+    {
+      "title": "Watching the world decide",
+      "who": "Curious visitors, and anyone with a second monitor",
+      "problem": "People want to know what the rest of the world is classifying, and what share of it is actually hot dogs.",
+      "how": "The live global feed shows anonymised verdicts by region and confidence, alongside today's totals (31.4% hot dogs). It is ambient and oddly calming, and it signals that the service is busy and strictly binary. Images never appear in it.",
+      "feature": "Global feed",
+      "realValue": "novelty"
+    }
+  ],
+  "siteSection": {
+    "eyebrow": "Use cases",
+    "heading": "From the packing line to the group chat.",
+    "intro": "HDX answers exactly one question. A surprising number of people need that answer in writing, with a case number. HDX classifies visual form only. It makes no assessment of ingredients, nutrition or food safety, and it declines to be drawn on the matter.",
+    "businessPicks": [
+      "Certified Hot Dog labels on packaging",
+      "Category audits for delivery marketplaces",
+      "UGC campaign moderation",
+      "Multi-site presentation audits"
+    ],
+    "consumerPicks": [
+      "Settle the household debate",
+      "Verify a product label by scan",
+      "A definitive spoken answer"
+    ],
+    "cardCopy": [
+      {
+        "title": "Certified on the package",
+        "audience": "business",
+        "body": "Issue a Certificate of Classification and print its QR on packaging, menus, trays or the truck window. Your customers scan it and confirm, on a public verification page, that the product is a certified hot dog.",
+        "proof": "Certificate PDF · Print QR labels · hdx.example/v/7KQ2-M9XD"
+      },
+      {
+        "title": "Catalogue integrity, by morning",
+        "audience": "business",
+        "body": "Submit every photo in your Hot Dogs category as one batch. By morning each listing has a verdict and a case ID, and the ones showing a burger are waiting in your catalogue team's queue.",
+        "proof": "Batch processing · REST API · CSV export"
+      },
+      {
+        "title": "Campaign entries, pre-screened",
+        "audience": "business",
+        "body": "Route contest submissions through the API, and a webhook sorts them as they arrive: HOT DOG to the gallery, NOT HOT DOG to a polite decline. Your moderators handle the appeals, not the pizza.",
+        "proof": "REST API · Webhooks · Review Board appeals"
+      },
+      {
+        "title": "One standard at every counter",
+        "audience": "business",
+        "body": "Outlet teams photograph the product as served, and HDX classifies it under one published policy at every site. Each verdict is logged by counter, so your quality lead knows exactly where flatbreads are being sold under the hot dog sign.",
+        "proof": "Team workspaces · Google SSO · Audit log · Policy v3.2"
+      },
+      {
+        "title": "Settle it, with a case number",
+        "audience": "consumer",
+        "body": "Upload the photo in question. No account, no small talk: one verdict, a confidence score and the policy section that decided it, in a link you can send to the group chat.",
+        "proof": "Free · No signup · Shareable verdict link"
+      },
+      {
+        "title": "Scan the label, see the record",
+        "audience": "consumer",
+        "body": "See an HDX label on a pack or a menu? Scan it to open the public record: what was certified, to whom, when, and whether the certificate is still valid.",
+        "proof": "Public verification page · Works with any phone camera"
+      },
+      {
+        "title": "A verdict you can hear",
+        "audience": "consumer",
+        "body": "Point the camera, and your screen reader announces the verdict in one phrase, with its confidence, while the screen shows it in high-contrast bands. It tells you what the item looks like, never what is in it.",
+        "proof": "Camera capture · Screen-reader announcement · High-contrast verdicts"
+      }
+    ]
+  },
+  "productImplications": [
+    "Public verification page at hdx.example/v/<CODE> with product name, SKU, issuer, issue date, Valid/Revoked status, scan count and the scope disclaimer, plus a clear 'No certificate matches this code' state for unknown or counterfeit codes.",
+    "A 'Certify a product' step when issuing a certificate, which attaches a product name and SKU to the verdict so a label points to a product, not just an image.",
+    "Print QR labels sheet with preset sizes (25, 40, 60 mm), placement guidance for packs, menus, trays and windows, and a vector SVG/PNG download for packaging designers. HDX branding goes on every label.",
+    "Scan analytics on the business dashboard (scans per certificate over time, by anonymised region), so the label loop shows measurable value.",
+    "A Revoke certificate action for when a product changes, which the verification page must show immediately.",
+    "Batch results view and CSV export with case IDs, confidence and a 'NOT HOT DOG only' filter, for catalogue and dataset audits.",
+    "Documented webhook events (verdict.created, appeal.resolved) with signed payloads, plus a short UGC-moderation recipe in the API docs.",
+    "Accessibility as a feature: an aria-live announcement such as 'Verdict: HOT DOG, 99.2 percent confidence', an optional Read aloud button, camera capture on mobile, and verdicts that never rely on colour alone.",
+    "The scope disclaimer (visual form only, no claims about ingredients, nutrition, allergens or food safety) on every verdict, certificate, label and verification page.",
+    "A shareable verdict card with a social preview image, so consumer results travel to group chats and bring new visitors.",
+    "A full-screen display mode for the global feed, for venue screens, science centres and classrooms, keeping it anonymised (region, verdict, confidence only).",
+    "An education tier with rate-limited sandbox API keys and an edge-case sample set (corn dog, bratwurst, sausage roll), with the public policy presented as labelling guidelines.",
+    "Put the Use cases section on the landing page next to the Global feed, with each card linking to the feature it relies on (certificate, batch/API, webhooks, workspaces)."
+  ]
+}

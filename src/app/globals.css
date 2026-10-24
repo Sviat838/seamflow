@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/*
+ * HDX design tokens (docs/design/README.md, FINAL-SPEC.md). Light theme only.
+ * Component reference: docs/design/COMPONENTS.md.
+ */
+@theme {
+  --color-navy: #0b1f3a;
+  --color-navy-raised: #13294b;
+  --color-navy-raised-2: #1e3a63;
+  --color-navy-border: #24395a;
+  --color-navy-hover: #1d3a66;
+  --color-mustard: #f2b705;
+  --color-mustard-strong: #d9a400;
+  --color-mustard-tint: #fdf3d0;
+  --color-ground: #f3f5f8;
+  --color-ground-soft: #f7f8fa;
+  --color-hairline: #d9dee5;
+  --color-field: #7a8699;
+  --color-body: #3f4a5a;
+  --color-secondary: #5b6676;
+  --color-on-navy-secondary: #b8c2d1;
+  --color-on-navy-sub: #d5dce6;
+  --color-on-navy-muted: #9aa8bc;
+  --color-status-green: #1e7b4f;
+  /* Live dot on navy (the board footer). */
+  --color-status-green-bright: #3fb97a;
+  /* Not in the boards: form errors need a colour that isn't navy. 7.9:1 on white. */
+  --color-danger: #9b1c1c;
+
+  --radius-card: 6px;
+  --radius-chip: 4px;
+
+  --container-page: 75rem;
+  --container-narrow: 47.5rem;
+
+  --text-13: 0.8125rem;
+  --text-13--line-height: 1.45;
+  --text-15: 0.9375rem;
+  --text-15--line-height: 1.5;
+  --text-17: 1.0625rem;
+  --text-17--line-height: 1.55;
+}
+
+/* next/font sets these variables on <html>; inline keeps the utilities pointing at them.
+   The var() fallbacks keep pages without the root layout (global-error) on sane fonts. */
+@theme inline {
+  --font-sans: var(--font-source-sans, "Helvetica Neue"), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-source-serif, Georgia), Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --focus-ring: var(--color-navy);
+    color-scheme: light;
+  }
+
+  /* Navy surfaces switch focus rings to mustard so they stay visible (>= 3:1). */
+  [data-tone="navy"] {
+    --focus-ring: var(--color-mustard);
+  }
+  [data-tone="light"] {
+    --focus-ring: var(--color-navy);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Anchor targets clear the page edge when jumped to. */
+  [id] {
+    scroll-margin-top: 1rem;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-mustard);
+    color: var(--color-navy);
+  }
+
+  dialog::backdrop {
+    background-color: rgb(11 31 58 / 0.6);
+  }
+}
+
+@media print {
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

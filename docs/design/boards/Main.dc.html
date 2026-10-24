@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HDX — final design overview</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0B1F3A}a:hover{color:#24395A}
+</style>
+</helmet>
+<main style="width: 1440px; height: 900px; overflow: hidden; background: #FFFFFF; color: #3F4A5A; font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column">
+  <header style="background: #0B1F3A; padding: 56px 72px 48px; display: flex; justify-content: space-between; align-items: flex-end; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #B8C2D1">Hot Dog or Not — Enterprise Edition · Final design</p>
+      <h1 style="margin: 0; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 60px; line-height: 1.05; color: #FFFFFF">HDX · Classic Enterprise</h1>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center">
+      <span style="background: #F2B705; color: #0B1F3A; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; padding: 8px 14px; border-radius: 4px">HOT DOG</span>
+      <span style="background: #FFFFFF; color: #0B1F3A; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; padding: 8px 14px; border-radius: 4px">NOT HOT DOG</span>
+    </div>
+  </header>
+
+  <div style="flex-grow: 1; padding: 48px 72px 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px">
+
+    <section aria-labelledby="sys-title" style="display: flex; flex-direction: column; gap: 20px">
+      <h2 id="sys-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; color: #0B1F3A">Design system</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; align-items: center; gap: 12px"><div aria-hidden="true" style="width: 36px; height: 36px; border-radius: 6px; background: #0B1F3A"></div><p style="margin: 0; font-size: 15px"><strong style="color: #0B1F3A">#0B1F3A</strong> Navy: ink, bands, NOT HOT DOG</p></div>
+        <div style="display: flex; align-items: center; gap: 12px"><div aria-hidden="true" style="width: 36px; height: 36px; border-radius: 6px; background: #F2B705"></div><p style="margin: 0; font-size: 15px"><strong style="color: #0B1F3A">#F2B705</strong> Mustard: primary action, HOT DOG</p></div>
+        <div style="display: flex; align-items: center; gap: 12px"><div aria-hidden="true" style="width: 36px; height: 36px; border-radius: 6px; background: #F3F5F8; border: 1px solid #D9DEE5"></div><p style="margin: 0; font-size: 15px"><strong style="color: #0B1F3A">#F3F5F8</strong> Section ground, zebra rows</p></div>
+        <div style="display: flex; align-items: center; gap: 12px"><div aria-hidden="true" style="width: 36px; height: 36px; border-radius: 6px; background: #1E7B4F"></div><p style="margin: 0; font-size: 15px"><strong style="color: #0B1F3A">#1E7B4F</strong> Status: live, valid</p></div>
+      </div>
+      <div style="border-top: 1px solid #D9DEE5; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.1; color: #0B1F3A">Source Serif 4</p>
+        <p style="margin: 0; font-size: 15px">Display headlines, verdicts and big numbers</p>
+        <p style="margin: 8px 0 0; font-weight: 600; font-size: 22px; color: #0B1F3A">Source Sans 3</p>
+        <p style="margin: 0; font-size: 15px">UI and body text. Radius 6 px for cards and 4 px for chips, on an 8 px grid.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="dec-title" style="display: flex; flex-direction: column; gap: 20px">
+      <h2 id="dec-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; color: #0B1F3A">Product decisions</h2>
+      <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px">
+        <li style="display: flex; gap: 14px"><span style="flex: 0 0 auto; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; color: #0B1F3A">1</span><p style="margin: 0; font-size: 16px; line-height: 1.45"><strong style="color: #0B1F3A">Upload first.</strong> No signup, with 20 free classifications.</p></li>
+        <li style="display: flex; gap: 14px"><span style="flex: 0 0 auto; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; color: #0B1F3A">2</span><p style="margin: 0; font-size: 16px; line-height: 1.45"><strong style="color: #0B1F3A">Binary verdict, backed by policy.</strong> Hot Dog Definition Policy v3.2 settles edge cases, and the Hot Dog Review Board hears appeals.</p></li>
+        <li style="display: flex; gap: 14px"><span style="flex: 0 0 auto; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; color: #0B1F3A">3</span><p style="margin: 0; font-size: 16px; line-height: 1.45"><strong style="color: #0B1F3A">Live global feed.</strong> Anonymised: region, verdict and confidence, never images.</p></li>
+        <li style="display: flex; gap: 14px"><span style="flex: 0 0 auto; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; color: #0B1F3A">4</span><p style="margin: 0; font-size: 16px; line-height: 1.45"><strong style="color: #0B1F3A">QR certificates.</strong> A PDF certificate, plus QR labels businesses print on their products. Shoppers scan to verify, and certificates can be revoked.</p></li>
+        <li style="display: flex; gap: 14px"><span style="flex: 0 0 auto; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 20px; color: #0B1F3A">5</span><p style="margin: 0; font-size: 16px; line-height: 1.45"><strong style="color: #0B1F3A">Business plan.</strong> API, batch, certificates, SSO and SLA. Pricing per customer: contact us.</p></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="idx-title" style="display: flex; flex-direction: column; gap: 20px">
+      <h2 id="idx-title" style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 26px; color: #0B1F3A">On this canvas</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">Landing page</span><span style="color: #5B6676">Desktop, responsive</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">Verdict and workspace</span><span style="color: #5B6676">Desktop app</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">Certificate</span><span style="color: #5B6676">A4 PDF</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">QR label sheet</span><span style="color: #5B6676">A4 print</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">Mobile result</span><span style="color: #5B6676">Phone</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D9DEE5"><span style="font-weight: 600; color: #0B1F3A">Public verify page</span><span style="color: #5B6676">Phone, after a QR scan</span></li>
+        <li style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0"><span style="font-weight: 600; color: #0B1F3A">01 Classic, original</span><span style="color: #5B6676">Base direction</span></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
