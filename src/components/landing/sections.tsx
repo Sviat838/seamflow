@@ -192,7 +192,7 @@ export function PlansSection() {
               <Button href="/#classify">Classify an image</Button>
             </div>
           </Card>
-          <Card className="bg-navy p-6 text-white" data-tone="navy">
+          <Card tone="navy" className="p-6">
             <h3 className="font-serif text-2xl font-semibold text-white">Business</h3>
             <p className="mt-1 text-15 text-on-navy-sub">Pricing for your volume.</p>
             <ul className="mt-4 space-y-2 text-15 text-on-navy-sub">

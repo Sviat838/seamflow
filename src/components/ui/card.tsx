@@ -5,20 +5,23 @@ type CardTag = "section" | "div" | "article" | "li" | "aside";
 
 export interface CardProps extends HTMLAttributes<HTMLElement> {
   as?: CardTag;
-  /** Section ground instead of white. */
-  tone?: "white" | "ground";
+  /** Section ground or navy instead of white. Use this rather than a bg-* class: cx() doesn't merge conflicting classes. */
+  tone?: "white" | "ground" | "navy";
 }
 
-/** White panel with a hairline border and 6 px radius. */
+const TONE_CLASSES = {
+  white: "border-hairline bg-white",
+  ground: "border-hairline bg-ground",
+  navy: "border-navy bg-navy text-white",
+} as const;
+
+/** Panel with a 1 px border and 6 px radius. */
 export function Card({ as: Tag = "section", tone = "white", className, ...props }: CardProps) {
   return (
     <Tag
+      data-tone={tone === "navy" ? "navy" : undefined}
       {...props}
-      className={cx(
-        "overflow-hidden rounded-card border border-hairline",
-        tone === "ground" ? "bg-ground" : "bg-white",
-        className,
-      )}
+      className={cx("overflow-hidden rounded-card border", TONE_CLASSES[tone], className)}
     />
   );
 }
