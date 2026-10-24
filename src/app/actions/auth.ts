@@ -2,7 +2,19 @@
 
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { originFromHeaders, sanitizeNextPath } from "@/lib/auth/redirect";
+import { finishSignIn } from "@/lib/auth/after-sign-in";
+import {
+  CredentialsError,
+  parseCredentialsForm,
+  parseMode,
+  typedEmail,
+  type PasswordAuthState,
+} from "@/lib/auth/credentials";
+import { authenticateWithPassword } from "@/lib/auth/password";
+import { nextAfterAuth, onboardingPath, originFromHeaders, sanitizeNextPath } from "@/lib/auth/redirect";
+import { VISITOR_COOKIE, parseVisitorId } from "@/lib/auth/visitor";
+import { getRequestId } from "@/lib/http/request";
+import { toActionError } from "@/lib/http/respond";
 import { log } from "@/lib/log";
 import { createServerSupabase } from "@/lib/supabase/server";
 
@@ -39,6 +51,34 @@ export async function signInWithGoogle(formData?: FormData): Promise<void> {
   }
   // redirect() throws, so it stays outside the try block.
   redirect(providerUrl ?? "/?auth_error=1");
+}
+
+/**
+ * useActionState-compatible email + password form: `mode` ("sign_in" | "sign_up"), `email`,
+ * `password` and an optional `next`. Sign-up creates the account with no confirmation email.
+ * On success redirects (to `next`, or to onboarding when the account has no company yet), like
+ * the Google callback; on failure returns the error, the field it belongs to and the typed email.
+ */
+export async function passwordAuthAction(_prev: unknown, formData: FormData): Promise<PasswordAuthState> {
+  const requestHeaders = await headers();
+  const requestId = getRequestId(requestHeaders);
+  const next = nextAfterAuth(formData.get("next"));
+  let hasCompany: boolean;
+  try {
+    const credentials = parseCredentialsForm(formData);
+    const { userId } = await authenticateWithPassword(credentials, { headers: requestHeaders, requestId });
+    const visitorId = parseVisitorId((await cookies()).get(VISITOR_COOKIE)?.value);
+    ({ hasCompany } = await finishSignIn({ userId, visitorId, requestId, method: "password" }));
+  } catch (error) {
+    return {
+      error: toActionError(error, requestId).error,
+      email: typedEmail(formData),
+      mode: parseMode(formData.get("mode")),
+      field: error instanceof CredentialsError ? error.field : null,
+    };
+  }
+  // redirect() throws, so it stays outside the try block.
+  redirect(hasCompany ? next : onboardingPath(next));
 }
 
 /** Signs out this browser and redirects to "/". */

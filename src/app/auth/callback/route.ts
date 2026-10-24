@@ -1,11 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { claimVisitorScans } from "@/lib/auth/claim";
+import { finishSignIn } from "@/lib/auth/after-sign-in";
 import { nextAfterAuth, onboardingPath } from "@/lib/auth/redirect";
 import { VISITOR_COOKIE, parseVisitorId } from "@/lib/auth/visitor";
-import { readCompanyId } from "@/lib/companies/profile";
 import { getRequestId } from "@/lib/http/request";
 import { log } from "@/lib/log";
-import { getAdminClient } from "@/lib/supabase/admin";
 import { createServerSupabase } from "@/lib/supabase/server";
 
 const AUTH_ERROR_PATH = "/?auth_error=1";
@@ -15,18 +13,6 @@ function redirectTo(path: string, origin: string): NextResponse {
   // Carries fresh session cookies; must never be cached by a CDN.
   response.headers.set("Cache-Control", "private, no-store");
   return response;
-}
-
-/** The user's company id; null when they have none, undefined when it couldn't be read. */
-async function findCompanyId(userId: string, requestId: string): Promise<string | null | undefined> {
-  const admin = getAdminClient();
-  if (!admin) return null;
-  try {
-    return await readCompanyId(admin, userId);
-  } catch (error) {
-    log.warn("auth.callback_company_lookup_failed", { requestId, userId, error });
-    return undefined;
-  }
 }
 
 /**
@@ -54,13 +40,8 @@ export async function GET(request: NextRequest) {
       log.warn("auth.callback_exchange_failed", { requestId, error });
       return redirectTo(AUTH_ERROR_PATH, origin);
     }
-    const userId = data.user.id;
-    const companyId = await findCompanyId(userId, requestId);
     const visitorId = parseVisitorId(request.cookies.get(VISITOR_COOKIE)?.value);
-    if (visitorId) await claimVisitorScans(userId, visitorId, companyId);
-    // Unknown (lookup failed) also goes to onboarding, which forwards users who have a company to `next`.
-    hasCompany = Boolean(companyId);
-    log.info("auth.signed_in", { requestId, userId, hasCompany });
+    ({ hasCompany } = await finishSignIn({ userId: data.user.id, visitorId, requestId, method: "google" }));
   } catch (error) {
     log.error("auth.callback_failed", { requestId, error });
     return redirectTo(AUTH_ERROR_PATH, origin);

@@ -86,7 +86,15 @@ export function claimVisitorScans(userId: string, visitorId: string): Promise<nu
 // src/app/actions/auth.ts ("use server")
 export function signInWithGoogle(formData?: FormData): Promise<void>; // redirects; optional `next` field
 export function signOut(): Promise<void>;                             // redirects to "/"
+/** Email + password, no confirmation email. Form fields: mode ("sign_in" | "sign_up"), email, password, next. */
+export function passwordAuthAction(prev: unknown, formData: FormData): Promise<PasswordAuthState>; // redirects on success; returns { error, email, mode, field } on failure
+
+// src/lib/auth/password.ts: authenticateWithPassword(credentials, { headers, requestId })
+// src/lib/auth/credentials.ts (pure): parseCredentialsForm, mapAuthError (GoTrue error code -> friendly AppError)
+// src/lib/auth/after-sign-in.ts: finishSignIn() claims visitor scans and reports hasCompany (shared with /auth/callback)
 ```
+
+**Email + password.** Sign-up never depends on the dashboard's "Confirm email" setting and sends no email: the account is created server-side with `auth.admin.createUser({ email, password, email_confirm: true })`, then `signInWithPassword` on the cookie-bound client sets the session. Passwords are 8 to 72 characters on sign-up. Attempts are rate limited through `consume_rate_limit()` (`enforceAuthRateLimit`): per IP hash (sign-in 10/min and 60/h, sign-up 5/min and 20/h) and, for sign-in, per HMAC'd email (20/h). Errors: taken email → `CONFLICT` "An account with this email already exists…"; wrong email or password → `UNAUTHORIZED` "Wrong email or password." (never says which); too many attempts → `RATE_LIMITED`. After sign-in the flow is the same as Google: visitor scans are claimed and accounts without a company go to `/onboarding?next=...`.
 
 Routes: `GET /auth/callback` (exchange code, claim visitor scans, redirect to `next`, same-origin only). Error display is the UI's job: failed or cancelled sign-in lands on `/?auth_error=1`, and on `/?auth_error=not_configured` when Supabase isn't configured.
 

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { signInWithGoogle } from "@/app/actions/auth";
 import { ViewerSiteHeader } from "@/components/companies/viewer-header";
+import { PasswordAuthForm } from "@/components/forms/password-auth-form";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Card, CardBody } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -15,7 +16,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to HDX or create your company workspace with Google.",
+  description: "Sign in to HDX or create your company workspace with Google or your email.",
 };
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
@@ -54,8 +55,8 @@ function SignInCard({ next, authError }: { next: string; authError: boolean }) {
     <div className="mx-auto max-w-lg">
       <h1 className="font-serif text-3xl font-semibold text-navy sm:text-4xl">Sign in or create your workspace</h1>
       <p className="mt-3 text-17 text-body">
-        One Google account, one company workspace. New here? Signing in creates your account, then you name your
-        company.
+        One account, one company workspace. New here? Continue with Google or create an account with your email,
+        then name your company.
       </p>
       {authError ? (
         <div role="alert" className="mt-6">
@@ -72,8 +73,15 @@ function SignInCard({ next, authError }: { next: string; authError: boolean }) {
               Continue with Google
             </SubmitButton>
           </form>
-          <p className="mt-4 text-sm text-secondary">
-            We only use your name, email and avatar from Google. By continuing you agree to HDX&apos;s policy terms.
+          <div className="my-6 flex items-center gap-3 text-13 font-semibold uppercase tracking-wide text-secondary">
+            <span aria-hidden="true" className="h-px flex-1 bg-hairline" />
+            or use your email
+            <span aria-hidden="true" className="h-px flex-1 bg-hairline" />
+          </div>
+          <PasswordAuthForm next={next} />
+          <p className="mt-5 text-sm text-secondary">
+            We only use your name, email and avatar from Google. No confirmation email is sent for email accounts. By
+            continuing you agree to HDX&apos;s policy terms.
           </p>
         </CardBody>
       </Card>

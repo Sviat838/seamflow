@@ -10,7 +10,7 @@ export default defineConfig({
   },
   test: {
     environment: "node",
-    include: ["src/**/*.test.ts"],
+    include: ["src/**/*.test.ts", "scripts/**/*.test.ts"],
     // Live tests hit paid APIs; run them explicitly with LIVE_AI=1.
     exclude: ["**/node_modules/**", ...(process.env.LIVE_AI ? [] : ["src/**/*.live.test.ts"])],
   },

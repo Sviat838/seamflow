@@ -1,6 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { AppError } from "@/lib/errors";
 import {
+  authBuckets,
+  checkAuthRateLimit,
   checkScanRateLimit,
   createMemoryConsumer,
   createRpcConsumer,
@@ -254,5 +256,43 @@ describe("enforceScanRateLimit", () => {
     admin.client = { rpc };
     await enforceScanRateLimit({ userId: "user-rpc", visitorId: "v", ipHash: "h" });
     expect(rpc).toHaveBeenCalledTimes(5);
+  });
+});
+
+describe("authBuckets", () => {
+  it("limits sign-in per IP and per account", () => {
+    expect(authBuckets("sign_in", { ipHash: "ip1", emailHash: "em1" })).toEqual([
+      { key: "auth:sign_in:1m:ip:ip1", limit: 10, windowSeconds: 60 },
+      { key: "auth:sign_in:1h:ip:ip1", limit: 60, windowSeconds: 3600 },
+      { key: "auth:sign_in:1h:email:em1", limit: 20, windowSeconds: 3600 },
+    ]);
+  });
+
+  it("limits sign-up per IP only, sharing one bucket when the IP is unknown", () => {
+    expect(authBuckets("sign_up", { ipHash: null, emailHash: "em1" })).toEqual([
+      { key: "auth:sign_up:1m:ip:unknown", limit: 5, windowSeconds: 60 },
+      { key: "auth:sign_up:1h:ip:unknown", limit: 20, windowSeconds: 3600 },
+    ]);
+  });
+});
+
+describe("checkAuthRateLimit", () => {
+  it("allows attempts under the limit and blocks the sixth sign-up in a minute", async () => {
+    const deps = { consume: null, fallback: createMemoryConsumer({ now: () => NOW }), now: () => NOW };
+    const keys = { ipHash: "ip-auth", emailHash: null };
+    for (let i = 0; i < 5; i++) await checkAuthRateLimit("sign_up", keys, deps);
+    const error = await catchError(checkAuthRateLimit("sign_up", keys, deps));
+    expect(error.code).toBe("RATE_LIMITED");
+    expect(error.retryAfterSeconds).toBe(30);
+    expect(error.message).toBe("Too many sign-up attempts. Please try again in 30 seconds.");
+  });
+
+  it("uses the RPC consumer when available", async () => {
+    const { consume, calls } = fakeConsumer({ "auth:sign_in:1h:email:em1": NOW + 600_000 });
+    const error = await catchError(
+      checkAuthRateLimit("sign_in", { ipHash: "ip1", emailHash: "em1" }, { consume, fallback: unusedFallback, now: () => NOW }),
+    );
+    expect(calls.map((b) => b.key)).toContain("auth:sign_in:1h:email:em1");
+    expect(error.message).toBe("Too many sign-in attempts. Please try again in 10 minutes.");
   });
 });

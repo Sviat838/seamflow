@@ -119,7 +119,10 @@ export function createMemoryConsumer(
 
 let warnedNoDatabase = false;
 
-async function consumeAll(buckets: RateLimitBucket[], deps: RateLimitDeps): Promise<BucketState[]> {
+async function consumeAll(
+  buckets: RateLimitBucket[],
+  deps: Pick<RateLimitDeps, "consume" | "fallback">,
+): Promise<BucketState[]> {
   const { consume, fallback } = deps;
   if (!consume) {
     if (!warnedNoDatabase) {
@@ -200,6 +203,67 @@ export async function enforceScanRateLimit(subject: RateLimitSubject): Promise<v
       perDay: env.RATE_LIMIT_PER_DAY,
       globalPerDay: env.GLOBAL_DAILY_SCAN_CAP,
     },
+    consume: admin ? createRpcConsumer(admin) : null,
+    fallback: memoryConsumer,
+  });
+}
+
+export type AuthAttempt = "sign_in" | "sign_up";
+
+const HOUR = 3600;
+// Generous enough for a typo or three and a shared office IP; tight enough to stop password guessing.
+const AUTH_LIMITS: Record<AuthAttempt, { perMinute: number; perHour: number }> = {
+  sign_in: { perMinute: 10, perHour: 60 },
+  sign_up: { perMinute: 5, perHour: 20 },
+};
+/** Sign-in attempts per account per hour, from any number of IPs. */
+const SIGN_IN_PER_EMAIL_PER_HOUR = 20;
+
+/**
+ * Buckets for one email + password attempt: per IP hash (minute and hour) and, for sign-in, per
+ * hashed email so one account can't be guessed at from many addresses. Pure.
+ */
+export function authBuckets(
+  attempt: AuthAttempt,
+  keys: { ipHash: string | null; emailHash: string | null },
+): RateLimitBucket[] {
+  const { perMinute, perHour } = AUTH_LIMITS[attempt];
+  // Without a client IP (local tools, misconfigured proxies) everyone shares one bucket.
+  const ip = keys.ipHash ?? "unknown";
+  const buckets: RateLimitBucket[] = [
+    { key: `auth:${attempt}:1m:ip:${ip}`, limit: perMinute, windowSeconds: MINUTE },
+    { key: `auth:${attempt}:1h:ip:${ip}`, limit: perHour, windowSeconds: HOUR },
+  ];
+  if (attempt === "sign_in" && keys.emailHash) {
+    buckets.push({ key: `auth:sign_in:1h:email:${keys.emailHash}`, limit: SIGN_IN_PER_EMAIL_PER_HOUR, windowSeconds: HOUR });
+  }
+  return buckets;
+}
+
+/** Testable core of enforceAuthRateLimit. Throws AppError RATE_LIMITED with retryAfterSeconds. */
+export async function checkAuthRateLimit(
+  attempt: AuthAttempt,
+  keys: { ipHash: string | null; emailHash: string | null },
+  deps: Pick<RateLimitDeps, "consume" | "fallback" | "now">,
+): Promise<void> {
+  const now = deps.now ?? Date.now;
+  const blocked = (await consumeAll(authBuckets(attempt, keys), deps)).filter((state) => !state.allowed);
+  if (blocked.length === 0) return;
+  const retryAfterSeconds = secondsUntil(Math.max(...blocked.map((state) => state.resetAt)), now());
+  const what = attempt === "sign_up" ? "sign-up" : "sign-in";
+  throw new AppError("RATE_LIMITED", `Too many ${what} attempts. Please try again in ${formatWait(retryAfterSeconds)}.`, {
+    retryAfterSeconds,
+    retryable: true,
+  });
+}
+
+/** Per-IP (and per-account for sign-in) limits on email + password attempts. DB-backed, like scans. */
+export async function enforceAuthRateLimit(
+  attempt: AuthAttempt,
+  keys: { ipHash: string | null; emailHash: string | null },
+): Promise<void> {
+  const admin = getAdminClient();
+  await checkAuthRateLimit(attempt, keys, {
     consume: admin ? createRpcConsumer(admin) : null,
     fallback: memoryConsumer,
   });
