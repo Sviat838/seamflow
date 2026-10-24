@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { SiteHeader } from "@/components/layout/site-header";
+import { ViewerSiteHeader } from "@/components/companies/viewer-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -29,7 +29,7 @@ async function LandingFeed() {
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <ViewerSiteHeader />
       <main id="main">
         <section aria-labelledby="hero-title" className="bg-navy py-12 text-white sm:py-16" data-tone="navy">
           <Container className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">

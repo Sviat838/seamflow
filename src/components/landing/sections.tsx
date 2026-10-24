@@ -115,10 +115,10 @@ export function CertificatesSection() {
 
 export function PolicySection() {
   return (
-    <section id="platform" aria-labelledby="policy-title" className="border-t border-hairline bg-ground py-14 sm:py-20">
+    <section id="policy" aria-labelledby="policy-title" className="border-t border-hairline bg-ground py-14 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="§ 5 — Policy"
+          eyebrow="§ 4 — Policy"
           title="Every verdict cites a clause."
           titleId="policy-title"
           lead={`${POLICY_NAME} v${POLICY_VERSION}, in force since ${POLICY_EFFECTIVE}. The classifier applies it; the verdict names the clause it used.`}
@@ -166,7 +166,7 @@ export function PlansSection() {
     <section id="plans" aria-labelledby="plans-title" className="py-14 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="§ 7 — Plans"
+          eyebrow="§ 5 — Plans"
           title="Two plans. Still only two answers."
           titleId="plans-title"
           aside="Start free. When the answer matters to your business, talk to us."

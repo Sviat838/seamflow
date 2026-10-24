@@ -1,6 +1,6 @@
 /** Landing navigation. Anchors point at "/" so they work from every public page. */
 export const SITE_NAV_LINKS = [
-  { label: "Platform", href: "/#platform" },
+  { label: "Policy", href: "/#policy" },
   { label: "Use cases", href: "/#use-cases" },
   { label: "Live feed", href: "/#feed", live: true },
   { label: "Certificates", href: "/#certificates" },

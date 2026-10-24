@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/layout/site-header";
+import { ViewerSiteHeader } from "@/components/companies/viewer-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -27,7 +27,7 @@ const SECTIONS = [
 export default function PolicyPage() {
   return (
     <>
-      <SiteHeader />
+      <ViewerSiteHeader />
       <main id="main">
         <Container size="narrow" className="py-10 sm:py-14">
           <SectionHeading

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/layout/site-header";
+import { ViewerSiteHeader } from "@/components/companies/viewer-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Container } from "@/components/ui/container";
 import { LiveFeed } from "@/components/feed/live-feed";
@@ -19,7 +19,7 @@ async function FullFeed() {
 export default function FeedPage() {
   return (
     <>
-      <SiteHeader />
+      <ViewerSiteHeader />
       <main id="main">
         <Container className="py-10 sm:py-14">
           <Suspense

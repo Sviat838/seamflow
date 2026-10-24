@@ -9,10 +9,10 @@ type Props = { params: Promise<{ code: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { code } = await params;
   const cert = await getPublicCertificate(code).catch(() => null);
-  if (!cert) return { title: "Certificate not found · HDX", robots: { index: false } };
+  if (!cert) return { title: "Certificate not found", robots: { index: false } };
   const state = cert.status === "revoked" ? "Revoked certificate" : "Verified certificate";
   return {
-    title: `${state} ${cert.number} · HDX`,
+    title: `${state} ${cert.number}`,
     description: `${cert.productName ?? "Product"} issued to ${cert.issuedTo}. Verification code ${cert.code}.`,
     robots: { index: false },
   };

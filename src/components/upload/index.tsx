@@ -61,7 +61,7 @@ export function UploadCard({ variant = "hero" }: UploadCardProps) {
         : state.status === "analyzing"
           ? "Analyzing against Hot Dog Definition Policy v3.2…"
           : state.status === "done" && state.scan.caseNumber
-            ? `Verdict issued. Opening case ${state.scan.caseNumber}…`
+            ? `Verdict: ${state.scan.verdict === "hot_dog" ? "HOT DOG" : "NOT HOT DOG"}. Opening case ${state.scan.caseNumber}…`
             : "";
 
   const progress = state.status === "uploading" ? state.progress : state.status === "analyzing" ? 1 : null;
@@ -90,7 +90,7 @@ export function UploadCard({ variant = "hero" }: UploadCardProps) {
         <UploadIcon size={28} />
         <p className="text-15 font-semibold text-navy">Drop an image here, paste it, or choose a file</p>
         <div className="flex flex-wrap justify-center gap-2">
-          <label htmlFor={inputId} className={buttonClasses({ variant: "primary" })} aria-disabled={isBusy}>
+          <label htmlFor={inputId} className={cx(buttonClasses({ variant: "primary" }), "has-[+input:focus-visible]:outline-[3px] has-[+input:focus-visible]:outline-offset-2 has-[+input:focus-visible]:outline-navy")} aria-disabled={isBusy}>
             Browse files
           </label>
           <input
@@ -105,7 +105,7 @@ export function UploadCard({ variant = "hero" }: UploadCardProps) {
               e.target.value = "";
             }}
           />
-          <label htmlFor={cameraId} className={buttonClasses({ variant: "secondary" })} aria-disabled={isBusy}>
+          <label htmlFor={cameraId} className={cx(buttonClasses({ variant: "secondary" }), "has-[+input:focus-visible]:outline-[3px] has-[+input:focus-visible]:outline-offset-2 has-[+input:focus-visible]:outline-navy")} aria-disabled={isBusy}>
             <CameraIcon size={18} />
             <span className="ml-2">Take a photo</span>
           </label>

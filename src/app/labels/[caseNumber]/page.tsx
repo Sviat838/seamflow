@@ -11,7 +11,7 @@ import { getCaseForViewer } from "@/lib/scans/queries";
 
 type Props = { params: Promise<{ caseNumber: string }> };
 
-export const metadata: Metadata = { title: "QR labels · HDX", robots: { index: false } };
+export const metadata: Metadata = { title: "QR labels", robots: { index: false } };
 
 const PRINT_CSS = `
 @page { size: A4; margin: 0; }
