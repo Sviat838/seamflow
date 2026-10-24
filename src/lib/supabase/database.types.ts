@@ -19,9 +19,11 @@ export type Database = {
     Tables: {
       appeals: {
         Row: {
+          attempts: number
           created_at: string
           decided_at: string | null
           id: string
+          last_error: string | null
           reason: string
           reviewer_model: string | null
           ruling: string | null
@@ -31,9 +33,11 @@ export type Database = {
           visitor_id: string | null
         }
         Insert: {
+          attempts?: number
           created_at?: string
           decided_at?: string | null
           id?: string
+          last_error?: string | null
           reason: string
           reviewer_model?: string | null
           ruling?: string | null
@@ -43,9 +47,11 @@ export type Database = {
           visitor_id?: string | null
         }
         Update: {
+          attempts?: number
           created_at?: string
           decided_at?: string | null
           id?: string
+          last_error?: string | null
           reason?: string
           reviewer_model?: string | null
           ruling?: string | null
@@ -108,50 +114,75 @@ export type Database = {
       certificates: {
         Row: {
           code: string
+          company_id: string | null
+          confidence: number | null
           created_at: string
           id: string
           issued_to: string
           last_verified_at: string | null
           number: string
+          policy_clause: string | null
           product_name: string | null
+          rating: number | null
+          rating_note: string | null
           revoked_at: string | null
           revoked_reason: string | null
           scan_id: string
           sku: string | null
           status: string
+          verdict: Database["public"]["Enums"]["verdict"] | null
           verification_count: number
         }
         Insert: {
           code?: string
+          company_id?: string | null
+          confidence?: number | null
           created_at?: string
           id?: string
           issued_to: string
           last_verified_at?: string | null
           number?: string
+          policy_clause?: string | null
           product_name?: string | null
+          rating?: number | null
+          rating_note?: string | null
           revoked_at?: string | null
           revoked_reason?: string | null
           scan_id: string
           sku?: string | null
           status?: string
+          verdict?: Database["public"]["Enums"]["verdict"] | null
           verification_count?: number
         }
         Update: {
           code?: string
+          company_id?: string | null
+          confidence?: number | null
           created_at?: string
           id?: string
           issued_to?: string
           last_verified_at?: string | null
           number?: string
+          policy_clause?: string | null
           product_name?: string | null
+          rating?: number | null
+          rating_note?: string | null
           revoked_at?: string | null
           revoked_reason?: string | null
           scan_id?: string
           sku?: string | null
           status?: string
+          verdict?: Database["public"]["Enums"]["verdict"] | null
           verification_count?: number
         }
         Relationships: [
+          {
+            foreignKeyName: "certificates_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "certificates_scan_id_fkey"
             columns: ["scan_id"]
@@ -160,6 +191,30 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      classification_usage: {
+        Row: {
+          created_at: string
+          id: number
+          scan_id: string | null
+          scope: string
+          scope_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: never
+          scan_id?: string | null
+          scope: string
+          scope_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: never
+          scan_id?: string | null
+          scope?: string
+          scope_id?: string
+        }
+        Relationships: []
       }
       companies: {
         Row: {
